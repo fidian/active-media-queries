@@ -15,7 +15,7 @@ let content = `<html>
 </head>
 <body>
 <h1>Active Media Queries</h1>
-<p>You can test these yourself in your browser's developer tools. Try using 'window.matchMedia("min-width: 10px").matches' in the console.</p>
+<p>You can test these yourself in your browser's developer tools. Try using 'window.matchMedia("(min-width: 10px)").matches' in the console.</p>
 `;
 
 for (const query of queries) {
@@ -114,7 +114,7 @@ Fudgel.component('range-finder', {
             step /= 10;
         }
 
-        this.min = max.toFixed(this.decimals);
+        this.min = this.toFixed(max);
 
         // Scan larger to find the maximum
         step = initialStep;
@@ -127,7 +127,7 @@ Fudgel.component('range-finder', {
             step /= 10;
         }
 
-        this.max = max.toFixed(this.decimals);
+        this.max = this.toFixed(max)
 
         // Finally, set up listeners.
         const notify = () => this.recalculate();
@@ -146,7 +146,11 @@ Fudgel.component('range-finder', {
     }
 
     matchQuery(type, value) {
-        return \`(\${type}\${this.query}: \${value.toFixed(this.decimals)}\${this.unit})\`;
+        return \`(\${type}\${this.query}: \${this.toFixed(value)}\${this.unit})\`;
+    }
+    
+    toFixed(value) {
+        return value.toFixed(this.decimals).replace(/\.?0+$/, '');
     }
 });
 </script></body></html>`;
