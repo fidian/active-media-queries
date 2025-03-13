@@ -4,21 +4,55 @@
         "mediaType": true,
         "values": ["print", "screen"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types",
-        "description": "The output device type."
+        "description": "The output device type.",
+        "valueDescriptions": [
+            {
+                "value": "print",
+                "description": "Intended for paged material and for documents viewed on screen in print preview mode."
+            },
+            {
+                "value": "screen",
+                "description": "Intended primarily for color computer screens."
+            }
+        ]
     },
     {
         "name": "any-hover",
         "enum": true,
         "values": ["hover", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover",
-        "description": "Can the user hover over elements?"
+        "description": "Can the user hover over elements? This can match multiple queries.",
+        "valueDescriptions": [
+            {
+                "value": "hover",
+                "description": "Any input mechanism allows the user to hover over elements."
+            },
+            {
+                "value": "none",
+                "description": "Any input mechanism does not allow the user to hover over elements."
+            }
+        ]
     },
     {
         "name": "any-pointer",
         "enum": true,
         "values": ["coarse", "fine", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-pointer",
-        "description": "Is there a pointing device? How accurate is it?"
+        "description": "Is there a pointing device? How accurate is it? This can match multiple queries.",
+        "valueDescriptions": [
+            {
+                "value": "coarse",
+                "description": "Any input mechanism allows coarse positioning."
+            },
+            {
+                "value": "fine",
+                "description": "Any input mechanism allows fine positioning."
+            },
+            {
+                "value": "none",
+                "description": "There is no pointing device."
+            }
+        ]
     },
     {
         "name": "aspect-ratio",
@@ -26,7 +60,7 @@
         "units": ["/1"],
         "decimals": 5,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio",
-        "description": "The width-to-height aspect ratio of the viewport."
+        "description": "The width-to-height aspect ratio of the viewport. This is converted to a decimal number, e.g. 16/9 becomes 1.77778."
     },
     {
         "name": "color",
@@ -34,14 +68,34 @@
         "units": [""],
         "decimals": 0,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color",
-        "description": "Number of bits of color."
+        "description": "Number of bits of color.",
+        "valueDescriptions": [
+            {
+                "value": "0",
+                "description": "The output device is not a color device."
+            }
+        ]
     },
     {
         "name": "color-gamut",
         "enum": true,
         "values": ["p3", "rec2020", "srgb"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-gamut",
-        "description": "Color range supported for output."
+        "description": "Color range supported for output.",
+        "valueDescriptions": [
+            {
+                "value": "p3",
+                "description": "The display supports approximately the DCI-P3 gamut or more. <code>p3</code> includes <code>sRGB</code>."
+            },
+            {
+                "value": "rec2020",
+                "description": "The display supports approximately the gamut specified by the ITU-R BT.2020 color space or more. <code>rec2020</code> includes <code>p3</code> and <code>sRGB</code>."
+            },
+            {
+                "value": "srgb",
+                "description": "The display supports the sRGB gamut or more. This includes most displays."
+            }
+        ]
     },
     {
         "name": "color-index",
@@ -49,7 +103,13 @@
         "units": [""],
         "decimals": 0,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-index",
-        "description": "Number of indexed colors for display."
+        "description": "Number of indexed colors for display.",
+        "valueDescriptions": [
+            {
+                "value": "0",
+                "description": "The output device does not use an indexed color table."
+            }
+        ]
     },
     {
         "name": "device-aspect-ratio",
@@ -72,7 +132,17 @@
         "enum": true,
         "values": ["continuous", "folded"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-posture",
-        "description": "If viewport is flat or folded."
+        "description": "If viewport is flat or folded.",
+        "valueDescriptions": [
+            {
+                "value": "continuous",
+                "description": "The device is flat or is unable to fold."
+            },
+            {
+                "value": "folded",
+                "description": "The device is folded."
+            }
+        ]
     },
     {
         "name": "device-width",
@@ -85,30 +155,86 @@
     {
         "name": "display-mode",
         "enum": true,
-        "values": ["browser", "fullscreen", "minimal-ui", "standalone", "window-controls-overlay"],
+        "values": ["browser", "fullscreen", "minimal-ui", "picture-in-picture", "standalone", "window-controls-overlay"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/display-mode",
-        "description": "How the application is being displayed."
+        "description": "How the application is being displayed.",
+        "valueDescriptions": [
+            {
+                "value": "browser",
+                "description": "Opened in a conventional browser tab or new window."
+            },
+            {
+                "value": "fullscreen",
+                "description": "Opened in a standalone window that takes over the entire screen and no user agent chrome is shown."
+            },
+            {
+                "value": "minimal-ui",
+                "description": "Looks and feels like a standalone application with a minimal set of UI elements for controlling navigation."
+            },
+            {
+                "value": "picture-in-picture",
+                "description": "Displayed in a floating and always-on-top window."
+            },
+            {
+                "value": "standalone",
+                "description": "Looks and feels like a standalone application."
+            },
+            {
+                "value": "window-controls-overlay",
+                "description": "Looks and feels like a standard desktop application."
+            }
+        ]
     },
     {
         "name": "dynamic-range",
         "enum": true,
         "values": ["high", "standard"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/dynamic-range",
-        "description": "The combination of brightness, contrast ratio, and color depth."
+        "description": "The combination of brightness, contrast ratio, and color depth.",
+        "valueDescriptions": [
+            {
+                "value": "high",
+                "description": "The display and user agent support high peak brightness, high contrast ratio, and wide color gamut."
+            },
+            {
+                "value": "standard",
+                "description": "Matches any visual device. A device that matches <code>high</code> will also match <code>standard</code>."
+            }
+        ]
     },
     {
         "name": "forced-colors",
         "enum": true,
         "values": ["active", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors",
-        "description": "Does the user agent restrict colors?"
+        "description": "Does the user agent restrict colors?",
+        "valueDescriptions": [
+            {
+                "value": "active",
+                "description": "Forced color mode is active."
+            },
+            {
+                "value": "none",
+                "description": "The page's colors are not forced into a limited palette."
+            }
+        ]
     },
     {
         "name": "grid",
         "enum": true,
         "values": ["0", "1"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/grid",
-        "description": "Does the device use a grid or a bitmap screen? 0 is bitmap, 1 is grid."
+        "description": "Does the device use a grid or a bitmap screen?",
+        "valueDescriptions": [
+            {
+                "value": "0",
+                "description": "The device uses a bitmap screen."
+            },
+            {
+                "value": "1",
+                "description": "The device uses a grid screen."
+            }
+        ]
     },
     {
         "name": "height",
@@ -123,14 +249,34 @@
         "enum": true,
         "values": ["hover", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover",
-        "description": "Can the user hover over elements?"
+        "description": "Can the user hover over elements?",
+        "valueDescriptions": [
+            {
+                "value": "hover",
+                "description": "The primary input mechanism allows the user to hover over elements."
+            },
+            {
+                "value": "none",
+                "description": "Hovering is not possible with the primary input mechanism."
+            }
+        ]
     },
     {
         "name": "inverted-colors",
         "enum": true,
         "values": ["inverted", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors",
-        "description": "Is the user agent or OS inverting colors?"
+        "description": "Is the user agent or OS inverting colors?",
+        "valueDescriptions": [
+            {
+                "value": "inverted",
+                "description": "Colors are inverted."
+            },
+            {
+                "value": "none",
+                "description": "Neither the OS nor the user agent are inverting colors."
+            }
+        ]
     },
     {
         "name": "monochrome",
@@ -138,70 +284,186 @@
         "units": [""],
         "decimals": 0,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/monochrome",
-        "description": "Bits per pixel in the device's monochrome frame buffer."
+        "description": "Bits per pixel in the device's monochrome frame buffer.",
+        "valueDescriptions": [
+            {
+                "value": "0",
+                "description": "The device is not monochrome."
+            }
+        ]
     },
     {
         "name": "orientation",
         "enum": true,
         "values": ["landscape", "portrait"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation",
-        "description": "Viewport orientation."
+        "description": "Viewport orientation.",
+        "valueDescriptions": [
+            {
+                "value": "landscape",
+                "description": "The viewport is wider than it is tall."
+            },
+            {
+                "value": "portrait",
+                "description": "The viewport is taller than it is wide."
+            }
+        ]
     },
     {
         "name": "overflow-block",
         "enum": true,
-        "values": ["none", "optional-paged", "scroll", "visible"],
+        "values": ["none", "optional-paged", "paged", "scroll"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-block",
-        "description": "How does the device handle overflows along the block axis?"
+        "description": "How does the device handle overflows along the block axis?",
+        "valueDescriptions": [
+            {
+                "value": "none",
+                "description": "Overflowing content is not displayed."
+            },
+            {
+                "value": "optional-paged",
+                "description": "Content could be scrolled or page breaks can manually be triggered."
+            },
+            {
+                "value": "paged",
+                "description": "Content is broken up into discrete pages."
+            },
+            {
+                "value": "scroll",
+                "description": "Content is scrollable when it overflows."
+            }
+        ]
     },
     {
         "name": "overflow-inline",
         "enum": true,
         "values": ["none", "scroll"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-inline",
-        "description": "Can content overflowing the inline axis be scrolled?"
+        "description": "Can content overflowing the inline axis be scrolled?",
+        "valueDescriptions": [
+            {
+                "value": "none",
+                "description": "Overflowing content is not displayed."
+            },
+            {
+                "value": "scroll",
+                "description": "Content is scrollable when it overflows."
+            }
+        ]
     },
     {
         "name": "pointer",
         "enum": true,
         "values": ["coarse", "fine", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer",
-        "description": "Is the input a pointing device? How accurate is it?"
+        "description": "Is the input a pointing device? How accurate is it?",
+        "valueDescriptions": [
+            {
+                "value": "coarse",
+                "description": "The primary pointing device allows coarse positioning."
+            },
+            {
+                "value": "fine",
+                "description": "The primary pointing device allows fine positioning."
+            },
+            {
+                "value": "none",
+                "description": "There is no pointing device."
+            }
+        ]
     },
     {
         "name": "prefers-color-scheme",
         "enum": true,
         "values": ["dark", "light"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme",
-        "description": "Does the user prefer a light or dark color scheme?"
+        "description": "Does the user prefer a light or dark color scheme?",
+        "valueDescriptions": [
+            {
+                "value": "dark",
+                "description": "The user prefers a dark color scheme."
+            },
+            {
+                "value": "light",
+                "description": "The user prefers a light color scheme."
+            }
+        ]
     },
     {
         "name": "prefers-contrast",
         "enum": true,
         "values": ["custom", "less", "no-preference", "more"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast",
-        "description": "Did the user change the amount of contrast between adjacent colors?"
+        "description": "Did the user change the amount of contrast between adjacent colors?",
+        "valueDescriptions": [
+            {
+                "value": "custom",
+                "description": "The user has specified a specific set of colors. The colors do not fulfill <code>more</code> nor <code>less</code>."
+            },
+            {
+                "value": "less",
+                "description": "Less contrast is desired."
+            },
+            {
+                "value": "no-preference",
+                "description": "The user has no preference for contrast."
+            },
+            {
+                "value": "more",
+                "description": "More contrast is desired."
+            }
+        ]
     },
     {
         "name": "prefers-reduced-data",
         "enum": true,
         "values": ["no-preference", "reduce"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data",
-        "description": "Has the user requested web content that consumes less bandwidth?"
+        "description": "Has the user requested web content that consumes less bandwidth?",
+        "valueDescriptions": [
+            {
+                "value": "no-preference",
+                "description": "The user has no preference for reduced data usage."
+            },
+            {
+                "value": "reduce",
+                "description": "The user prefers reduced data usage."
+            }
+        ]
     },
     {
         "name": "prefers-reduced-motion",
         "enum": true,
         "values": ["no-preference", "reduce"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion",
-        "description": "Does the user prefer less motion?"
+        "description": "Does the user prefer less motion?",
+        "valueDescriptions": [
+            {
+                "value": "no-preference",
+                "description": "The user has no preference for reduced motion."
+            },
+            {
+                "value": "reduce",
+                "description": "The user prefers reduced motion."
+            }
+        ]
     },
     {
         "name": "prefers-reduced-transparency",
         "enum": true,
         "values": ["no-preference", "reduce"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency",
-        "description": "Does the user want less transparency or translucent layer effects?"
+        "description": "Does the user want less transparency or translucent layer effects?",
+        "valueDescriptions": [
+            {
+                "value": "no-preference",
+                "description": "The user has no preference for reduced transparency."
+            },
+            {
+                "value": "reduce",
+                "description": "The user prefers reduced transparency."
+            }
+        ]
     },
     {
         "name": "resolution",
@@ -216,35 +478,93 @@
         "enum": true,
         "values": ["interlace", "progressive"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/scan",
-        "description": "Is the display progressive or interlaced?"
+        "description": "Is the display progressive or interlaced?",
+        "valueDescriptions": [
+            {
+                "value": "interlace",
+                "description": "The display is interlaced."
+            },
+            {
+                "value": "progressive",
+                "description": "The display is progressive."
+            }
+        ]
     },
     {
         "name": "scripting",
         "enum": true,
         "values": ["enabled", "initial-only", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/scripting",
-        "description": "Is JavaScript enabled?"
+        "description": "Is JavaScript enabled?",
+        "valueDescriptions": [
+            {
+                "value": "enabled",
+                "description": "JavaScript is enabled."
+            },
+            {
+                "value": "initial-only",
+                "description": "JavaScript is enabled, but the user has requested that it be disabled after the initial page load."
+            },
+            {
+                "value": "none",
+                "description": "JavaScript is disabled."
+            }
+        ]
     },
     {
         "name": "shape",
         "enum": true,
         "values": ["rect", "round"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/shape",
-        "description": "Distinguish regular and round displays."
+        "description": "Distinguish regular and round displays.",
+        "valueDescriptions": [
+            {
+                "value": "rect",
+                "description": "The display is rectangular."
+            },
+            {
+                "value": "round",
+                "description": "The display is round."
+            }
+        ]
     },
     {
         "name": "update",
         "enum": true,
         "values": ["none", "slow", "fast"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/update",
-        "description": "How frequently can the device modify the appearance of content."
+        "description": "How frequently can the device modify the appearance of content.",
+        "valueDescriptions": [
+            {
+                "value": "none",
+                "description": "The device cannot modify the appearance of content, such as when it is printed on paper."
+            },
+            {
+                "value": "slow",
+                "description": "The device can modify the appearance of content, but it is slow, such as with an epaper display or severely underpowered device."
+            },
+            {
+                "value": "fast",
+                "description": "The device can modify the appearance of content quickly and animations could be used."
+            }
+        ]
     },
     {
         "name": "video-dynamic-range",
         "enum": true,
         "values": ["high", "standard"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/video-dynamic-range",
-        "description": "Combination of brightness, contrast ratio, and color depth supported by video."
+        "description": "Combination of brightness, contrast ratio, and color depth supported by video.",
+        "valueDescriptions": [
+            {
+                "value": "high",
+                "description": "The video supports high peak brightness, high contrast ratio, and color depth greater than 24-bit (8-bits per color component of RGB)."
+            },
+            {
+                "value": "standard",
+                "description": "Matches any visual device. A device that matches <code>high</code> will also match <code>standard</code>."
+            }
+        ]
     },
     {
         "name": "width",

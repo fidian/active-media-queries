@@ -7,9 +7,9 @@ Finds a list of all active media queries supported by your browser. Will show yo
 ## What's detected
 
 * [Media Type](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types) - The output device type.
-* [any-hover](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover) - Can the user hover over elements?
-* [any-pointer](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-pointer) - Is there a pointing device? How accurate is it?
-* [aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio) - The width-to-height aspect ratio of the viewport.
+* [any-hover](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover) - Can the user hover over elements? This can match multiple queries.
+* [any-pointer](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-pointer) - Is there a pointing device? How accurate is it? This can match multiple queries.
+* [aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio) - The width-to-height aspect ratio of the viewport. This is converted to a decimal number, e.g. 16/9 becomes 1.77778.
 * [color](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color) - Number of bits of color.
 * [color-gamut](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-gamut) - Color range supported for output.
 * [color-index](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-index) - Number of indexed colors for display.
@@ -20,11 +20,11 @@ Finds a list of all active media queries supported by your browser. Will show yo
 * [display-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/display-mode) - How the application is being displayed.
 * [dynamic-range](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/dynamic-range) - The combination of brightness, contrast ratio, and color depth.
 * [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors) - Does the user agent restrict colors?
-* [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/grid) - Does the device use a grid or a bitmap screen? 0 is bitmap, 1 is grid.
+* [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/grid) - Does the device use a grid or a bitmap screen?
 * [height](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/height) -  The output device height.
 * [hover](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) - Can the user hover over elements?
 * [inverted-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors) - Is the user agent or OS inverting colors?
-* [monochrome](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/monochrome) - Bits per pixel in the device&#x27;s monochrome frame buffer.
+* [monochrome](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/monochrome) - Bits per pixel in the device's monochrome frame buffer.
 * [orientation](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation) - Viewport orientation.
 * [overflow-block](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-block) - How does the device handle overflows along the block axis?
 * [overflow-inline](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-inline) - Can content overflowing the inline axis be scrolled?

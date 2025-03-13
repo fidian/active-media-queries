@@ -6,6 +6,7 @@
 .unsupported { text-transform: uppercase; color: red; font-weight: normal; }
 .media { font-weight: bold; }
 .description { margin-left: 1em; }
+code { background-color: #ddd; }
 </style>
 </head>
 <body>
@@ -16,6 +17,8 @@
 
 <p>Event listeners are added to the MediaQueryList objects to automatically update the display when the media query changes.</p>
 
+<p>Lengths are expressed in different units. It is possible to determine if the viewport is zoomed by comparing <code>em</code> units to <code>px</code> units. The <code>px</code> unit should be 16 times larger than the <code>em</code> unit when the viewport is zoomed to 100%.</p>
+
 
 <div class="media media-type-unsupported">
 <div>@media print <span class="unsupported">/* unsupported */</span>
@@ -25,7 +28,15 @@
 </div>
 <div class="media hide media-type-print">@media print</div>
 <div class="media hide media-type-screen">@media screen</div>
-<p class="description">The output device type. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types">MDN</a></p>
+<p class="description">
+The output device type.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types">MDN</a>
+</p>
+
+<ul>
+<li><code>print</code>: Intended for paged material and for documents viewed on screen in print preview mode.</li>
+<li><code>screen</code>: Intended primarily for color computer screens.</li>
+</ul>
 <style>
 @media print { .media-type-unsupported { display: none; } .media-type-print { display: initial; } }
 @media screen { .media-type-unsupported { display: none; } .media-type-screen { display: initial; } }
@@ -36,7 +47,15 @@
 </div>
 <div class="media hide media-any-hover-hover">@media (any-hover: hover)</div>
 <div class="media hide media-any-hover-none">@media (any-hover: none)</div>
-<p class="description">Can the user hover over elements? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover">MDN</a></p>
+<p class="description">
+Can the user hover over elements? This can match multiple queries.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover">MDN</a>
+</p>
+
+<ul>
+<li><code>hover</code>: Any input mechanism allows the user to hover over elements.</li>
+<li><code>none</code>: Any input mechanism does not allow the user to hover over elements.</li>
+</ul>
 <style>
 @media (any-hover: hover) { .media-any-hover-unsupported { display: none; } .media-any-hover-hover { display: initial; } }
 @media (any-hover: none) { .media-any-hover-unsupported { display: none; } .media-any-hover-none { display: initial; } }
@@ -49,7 +68,16 @@
 <div class="media hide media-any-pointer-coarse">@media (any-pointer: coarse)</div>
 <div class="media hide media-any-pointer-fine">@media (any-pointer: fine)</div>
 <div class="media hide media-any-pointer-none">@media (any-pointer: none)</div>
-<p class="description">Is there a pointing device? How accurate is it? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-pointer">MDN</a></p>
+<p class="description">
+Is there a pointing device? How accurate is it? This can match multiple queries.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-pointer">MDN</a>
+</p>
+
+<ul>
+<li><code>coarse</code>: Any input mechanism allows coarse positioning.</li>
+<li><code>fine</code>: Any input mechanism allows fine positioning.</li>
+<li><code>none</code>: There is no pointing device.</li>
+</ul>
 <style>
 @media (any-pointer: coarse) { .media-any-pointer-unsupported { display: none; } .media-any-pointer-coarse { display: initial; } }
 @media (any-pointer: fine) { .media-any-pointer-unsupported { display: none; } .media-any-pointer-fine { display: initial; } }
@@ -65,7 +93,11 @@
         @media (aspect-ratio) <i>JavaScript Required</i>
     </range-finder>
 </div>
-<p class="description">The width-to-height aspect ratio of the viewport. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio">MDN</a></p>
+<p class="description">
+The width-to-height aspect ratio of the viewport. This is converted to a decimal number, e.g. 16/9 becomes 1.77778.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio">MDN</a>
+</p>
+
 
 
 
@@ -74,14 +106,30 @@
         @media (color) <i>JavaScript Required</i>
     </range-finder>
 </div>
-<p class="description">Number of bits of color. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color">MDN</a></p>
+<p class="description">
+Number of bits of color.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color">MDN</a>
+</p>
+
+<ul>
+<li><code>0</code>: The output device is not a color device.</li>
+</ul>
 
 <div class="media media-color-gamut-unsupported">@media (color-gamut) <span class="unsupported">/* unsupported */</span>
 </div>
 <div class="media hide media-color-gamut-p3">@media (color-gamut: p3)</div>
 <div class="media hide media-color-gamut-rec2020">@media (color-gamut: rec2020)</div>
 <div class="media hide media-color-gamut-srgb">@media (color-gamut: srgb)</div>
-<p class="description">Color range supported for output. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-gamut">MDN</a></p>
+<p class="description">
+Color range supported for output.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-gamut">MDN</a>
+</p>
+
+<ul>
+<li><code>p3</code>: The display supports approximately the DCI-P3 gamut or more. <code>p3</code> includes <code>sRGB</code>.</li>
+<li><code>rec2020</code>: The display supports approximately the gamut specified by the ITU-R BT.2020 color space or more. <code>rec2020</code> includes <code>p3</code> and <code>sRGB</code>.</li>
+<li><code>srgb</code>: The display supports the sRGB gamut or more. This includes most displays.</li>
+</ul>
 <style>
 @media (color-gamut: p3) { .media-color-gamut-unsupported { display: none; } .media-color-gamut-p3 { display: initial; } }
 @media (color-gamut: rec2020) { .media-color-gamut-unsupported { display: none; } .media-color-gamut-rec2020 { display: initial; } }
@@ -97,7 +145,14 @@
         @media (color-index) <i>JavaScript Required</i>
     </range-finder>
 </div>
-<p class="description">Number of indexed colors for display. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-index">MDN</a></p>
+<p class="description">
+Number of indexed colors for display.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-index">MDN</a>
+</p>
+
+<ul>
+<li><code>0</code>: The output device does not use an indexed color table.</li>
+</ul>
 
 
 
@@ -106,7 +161,11 @@
         @media (device-aspect-ratio) <i>JavaScript Required</i>
     </range-finder>
 </div>
-<p class="description">DEPRECATED - Width-to-height aspect ratio of output. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-aspect-ratio">MDN</a></p>
+<p class="description">
+DEPRECATED - Width-to-height aspect ratio of output.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-aspect-ratio">MDN</a>
+</p>
+
 
 
 
@@ -120,13 +179,25 @@
         @media (device-height) <i>JavaScript Required</i>
     </range-finder>
 </div>
-<p class="description">DEPRECATED - Output device height. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-height">MDN</a></p>
+<p class="description">
+DEPRECATED - Output device height.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-height">MDN</a>
+</p>
+
 
 <div class="media media-device-posture-unsupported">@media (device-posture) <span class="unsupported">/* unsupported */</span>
 </div>
 <div class="media hide media-device-posture-continuous">@media (device-posture: continuous)</div>
 <div class="media hide media-device-posture-folded">@media (device-posture: folded)</div>
-<p class="description">If viewport is flat or folded. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-posture">MDN</a></p>
+<p class="description">
+If viewport is flat or folded.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-posture">MDN</a>
+</p>
+
+<ul>
+<li><code>continuous</code>: The device is flat or is unable to fold.</li>
+<li><code>folded</code>: The device is folded.</li>
+</ul>
 <style>
 @media (device-posture: continuous) { .media-device-posture-unsupported { display: none; } .media-device-posture-continuous { display: initial; } }
 @media (device-posture: folded) { .media-device-posture-unsupported { display: none; } .media-device-posture-folded { display: initial; } }
@@ -146,20 +217,38 @@
         @media (device-width) <i>JavaScript Required</i>
     </range-finder>
 </div>
-<p class="description">DEPRECATED - Output device width. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width">MDN</a></p>
+<p class="description">
+DEPRECATED - Output device width.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width">MDN</a>
+</p>
+
 
 <div class="media media-display-mode-unsupported">@media (display-mode) <span class="unsupported">/* unsupported */</span>
 </div>
 <div class="media hide media-display-mode-browser">@media (display-mode: browser)</div>
 <div class="media hide media-display-mode-fullscreen">@media (display-mode: fullscreen)</div>
 <div class="media hide media-display-mode-minimal-ui">@media (display-mode: minimal-ui)</div>
+<div class="media hide media-display-mode-picture-in-picture">@media (display-mode: picture-in-picture)</div>
 <div class="media hide media-display-mode-standalone">@media (display-mode: standalone)</div>
 <div class="media hide media-display-mode-window-controls-overlay">@media (display-mode: window-controls-overlay)</div>
-<p class="description">How the application is being displayed. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/display-mode">MDN</a></p>
+<p class="description">
+How the application is being displayed.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/display-mode">MDN</a>
+</p>
+
+<ul>
+<li><code>browser</code>: Opened in a conventional browser tab or new window.</li>
+<li><code>fullscreen</code>: Opened in a standalone window that takes over the entire screen and no user agent chrome is shown.</li>
+<li><code>minimal-ui</code>: Looks and feels like a standalone application with a minimal set of UI elements for controlling navigation.</li>
+<li><code>picture-in-picture</code>: Displayed in a floating and always-on-top window.</li>
+<li><code>standalone</code>: Looks and feels like a standalone application.</li>
+<li><code>window-controls-overlay</code>: Looks and feels like a standard desktop application.</li>
+</ul>
 <style>
 @media (display-mode: browser) { .media-display-mode-unsupported { display: none; } .media-display-mode-browser { display: initial; } }
 @media (display-mode: fullscreen) { .media-display-mode-unsupported { display: none; } .media-display-mode-fullscreen { display: initial; } }
 @media (display-mode: minimal-ui) { .media-display-mode-unsupported { display: none; } .media-display-mode-minimal-ui { display: initial; } }
+@media (display-mode: picture-in-picture) { .media-display-mode-unsupported { display: none; } .media-display-mode-picture-in-picture { display: initial; } }
 @media (display-mode: standalone) { .media-display-mode-unsupported { display: none; } .media-display-mode-standalone { display: initial; } }
 @media (display-mode: window-controls-overlay) { .media-display-mode-unsupported { display: none; } .media-display-mode-window-controls-overlay { display: initial; } }
 </style>
@@ -170,7 +259,15 @@
 </div>
 <div class="media hide media-dynamic-range-high">@media (dynamic-range: high)</div>
 <div class="media hide media-dynamic-range-standard">@media (dynamic-range: standard)</div>
-<p class="description">The combination of brightness, contrast ratio, and color depth. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/dynamic-range">MDN</a></p>
+<p class="description">
+The combination of brightness, contrast ratio, and color depth.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/dynamic-range">MDN</a>
+</p>
+
+<ul>
+<li><code>high</code>: The display and user agent support high peak brightness, high contrast ratio, and wide color gamut.</li>
+<li><code>standard</code>: Matches any visual device. A device that matches <code>high</code> will also match <code>standard</code>.</li>
+</ul>
 <style>
 @media (dynamic-range: high) { .media-dynamic-range-unsupported { display: none; } .media-dynamic-range-high { display: initial; } }
 @media (dynamic-range: standard) { .media-dynamic-range-unsupported { display: none; } .media-dynamic-range-standard { display: initial; } }
@@ -182,7 +279,15 @@
 </div>
 <div class="media hide media-forced-colors-active">@media (forced-colors: active)</div>
 <div class="media hide media-forced-colors-none">@media (forced-colors: none)</div>
-<p class="description">Does the user agent restrict colors? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors">MDN</a></p>
+<p class="description">
+Does the user agent restrict colors?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors">MDN</a>
+</p>
+
+<ul>
+<li><code>active</code>: Forced color mode is active.</li>
+<li><code>none</code>: The page's colors are not forced into a limited palette.</li>
+</ul>
 <style>
 @media (forced-colors: active) { .media-forced-colors-unsupported { display: none; } .media-forced-colors-active { display: initial; } }
 @media (forced-colors: none) { .media-forced-colors-unsupported { display: none; } .media-forced-colors-none { display: initial; } }
@@ -194,7 +299,15 @@
 </div>
 <div class="media hide media-grid-0">@media (grid: 0)</div>
 <div class="media hide media-grid-1">@media (grid: 1)</div>
-<p class="description">Does the device use a grid or a bitmap screen? 0 is bitmap, 1 is grid. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/grid">MDN</a></p>
+<p class="description">
+Does the device use a grid or a bitmap screen?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/grid">MDN</a>
+</p>
+
+<ul>
+<li><code>0</code>: The device uses a bitmap screen.</li>
+<li><code>1</code>: The device uses a grid screen.</li>
+</ul>
 <style>
 @media (grid: 0) { .media-grid-unsupported { display: none; } .media-grid-0 { display: initial; } }
 @media (grid: 1) { .media-grid-unsupported { display: none; } .media-grid-1 { display: initial; } }
@@ -214,13 +327,25 @@
         @media (height) <i>JavaScript Required</i>
     </range-finder>
 </div>
-<p class="description"> The output device height. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/height">MDN</a></p>
+<p class="description">
+ The output device height.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/height">MDN</a>
+</p>
+
 
 <div class="media media-hover-unsupported">@media (hover) <span class="unsupported">/* unsupported */</span>
 </div>
 <div class="media hide media-hover-hover">@media (hover: hover)</div>
 <div class="media hide media-hover-none">@media (hover: none)</div>
-<p class="description">Can the user hover over elements? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover">MDN</a></p>
+<p class="description">
+Can the user hover over elements?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover">MDN</a>
+</p>
+
+<ul>
+<li><code>hover</code>: The primary input mechanism allows the user to hover over elements.</li>
+<li><code>none</code>: Hovering is not possible with the primary input mechanism.</li>
+</ul>
 <style>
 @media (hover: hover) { .media-hover-unsupported { display: none; } .media-hover-hover { display: initial; } }
 @media (hover: none) { .media-hover-unsupported { display: none; } .media-hover-none { display: initial; } }
@@ -232,7 +357,15 @@
 </div>
 <div class="media hide media-inverted-colors-inverted">@media (inverted-colors: inverted)</div>
 <div class="media hide media-inverted-colors-none">@media (inverted-colors: none)</div>
-<p class="description">Is the user agent or OS inverting colors? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors">MDN</a></p>
+<p class="description">
+Is the user agent or OS inverting colors?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors">MDN</a>
+</p>
+
+<ul>
+<li><code>inverted</code>: Colors are inverted.</li>
+<li><code>none</code>: Neither the OS nor the user agent are inverting colors.</li>
+</ul>
 <style>
 @media (inverted-colors: inverted) { .media-inverted-colors-unsupported { display: none; } .media-inverted-colors-inverted { display: initial; } }
 @media (inverted-colors: none) { .media-inverted-colors-unsupported { display: none; } .media-inverted-colors-none { display: initial; } }
@@ -247,13 +380,28 @@
         @media (monochrome) <i>JavaScript Required</i>
     </range-finder>
 </div>
-<p class="description">Bits per pixel in the device&#x27;s monochrome frame buffer. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/monochrome">MDN</a></p>
+<p class="description">
+Bits per pixel in the device's monochrome frame buffer.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/monochrome">MDN</a>
+</p>
+
+<ul>
+<li><code>0</code>: The device is not monochrome.</li>
+</ul>
 
 <div class="media media-orientation-unsupported">@media (orientation) <span class="unsupported">/* unsupported */</span>
 </div>
 <div class="media hide media-orientation-landscape">@media (orientation: landscape)</div>
 <div class="media hide media-orientation-portrait">@media (orientation: portrait)</div>
-<p class="description">Viewport orientation. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation">MDN</a></p>
+<p class="description">
+Viewport orientation.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation">MDN</a>
+</p>
+
+<ul>
+<li><code>landscape</code>: The viewport is wider than it is tall.</li>
+<li><code>portrait</code>: The viewport is taller than it is wide.</li>
+</ul>
 <style>
 @media (orientation: landscape) { .media-orientation-unsupported { display: none; } .media-orientation-landscape { display: initial; } }
 @media (orientation: portrait) { .media-orientation-unsupported { display: none; } .media-orientation-portrait { display: initial; } }
@@ -265,14 +413,24 @@
 </div>
 <div class="media hide media-overflow-block-none">@media (overflow-block: none)</div>
 <div class="media hide media-overflow-block-optional-paged">@media (overflow-block: optional-paged)</div>
+<div class="media hide media-overflow-block-paged">@media (overflow-block: paged)</div>
 <div class="media hide media-overflow-block-scroll">@media (overflow-block: scroll)</div>
-<div class="media hide media-overflow-block-visible">@media (overflow-block: visible)</div>
-<p class="description">How does the device handle overflows along the block axis? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-block">MDN</a></p>
+<p class="description">
+How does the device handle overflows along the block axis?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-block">MDN</a>
+</p>
+
+<ul>
+<li><code>none</code>: Overflowing content is not displayed.</li>
+<li><code>optional-paged</code>: Content could be scrolled or page breaks can manually be triggered.</li>
+<li><code>paged</code>: Content is broken up into discrete pages.</li>
+<li><code>scroll</code>: Content is scrollable when it overflows.</li>
+</ul>
 <style>
 @media (overflow-block: none) { .media-overflow-block-unsupported { display: none; } .media-overflow-block-none { display: initial; } }
 @media (overflow-block: optional-paged) { .media-overflow-block-unsupported { display: none; } .media-overflow-block-optional-paged { display: initial; } }
+@media (overflow-block: paged) { .media-overflow-block-unsupported { display: none; } .media-overflow-block-paged { display: initial; } }
 @media (overflow-block: scroll) { .media-overflow-block-unsupported { display: none; } .media-overflow-block-scroll { display: initial; } }
-@media (overflow-block: visible) { .media-overflow-block-unsupported { display: none; } .media-overflow-block-visible { display: initial; } }
 </style>
 
 
@@ -281,7 +439,15 @@
 </div>
 <div class="media hide media-overflow-inline-none">@media (overflow-inline: none)</div>
 <div class="media hide media-overflow-inline-scroll">@media (overflow-inline: scroll)</div>
-<p class="description">Can content overflowing the inline axis be scrolled? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-inline">MDN</a></p>
+<p class="description">
+Can content overflowing the inline axis be scrolled?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-inline">MDN</a>
+</p>
+
+<ul>
+<li><code>none</code>: Overflowing content is not displayed.</li>
+<li><code>scroll</code>: Content is scrollable when it overflows.</li>
+</ul>
 <style>
 @media (overflow-inline: none) { .media-overflow-inline-unsupported { display: none; } .media-overflow-inline-none { display: initial; } }
 @media (overflow-inline: scroll) { .media-overflow-inline-unsupported { display: none; } .media-overflow-inline-scroll { display: initial; } }
@@ -294,7 +460,16 @@
 <div class="media hide media-pointer-coarse">@media (pointer: coarse)</div>
 <div class="media hide media-pointer-fine">@media (pointer: fine)</div>
 <div class="media hide media-pointer-none">@media (pointer: none)</div>
-<p class="description">Is the input a pointing device? How accurate is it? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer">MDN</a></p>
+<p class="description">
+Is the input a pointing device? How accurate is it?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer">MDN</a>
+</p>
+
+<ul>
+<li><code>coarse</code>: The primary pointing device allows coarse positioning.</li>
+<li><code>fine</code>: The primary pointing device allows fine positioning.</li>
+<li><code>none</code>: There is no pointing device.</li>
+</ul>
 <style>
 @media (pointer: coarse) { .media-pointer-unsupported { display: none; } .media-pointer-coarse { display: initial; } }
 @media (pointer: fine) { .media-pointer-unsupported { display: none; } .media-pointer-fine { display: initial; } }
@@ -307,7 +482,15 @@
 </div>
 <div class="media hide media-prefers-color-scheme-dark">@media (prefers-color-scheme: dark)</div>
 <div class="media hide media-prefers-color-scheme-light">@media (prefers-color-scheme: light)</div>
-<p class="description">Does the user prefer a light or dark color scheme? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">MDN</a></p>
+<p class="description">
+Does the user prefer a light or dark color scheme?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">MDN</a>
+</p>
+
+<ul>
+<li><code>dark</code>: The user prefers a dark color scheme.</li>
+<li><code>light</code>: The user prefers a light color scheme.</li>
+</ul>
 <style>
 @media (prefers-color-scheme: dark) { .media-prefers-color-scheme-unsupported { display: none; } .media-prefers-color-scheme-dark { display: initial; } }
 @media (prefers-color-scheme: light) { .media-prefers-color-scheme-unsupported { display: none; } .media-prefers-color-scheme-light { display: initial; } }
@@ -321,7 +504,17 @@
 <div class="media hide media-prefers-contrast-less">@media (prefers-contrast: less)</div>
 <div class="media hide media-prefers-contrast-no-preference">@media (prefers-contrast: no-preference)</div>
 <div class="media hide media-prefers-contrast-more">@media (prefers-contrast: more)</div>
-<p class="description">Did the user change the amount of contrast between adjacent colors? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast">MDN</a></p>
+<p class="description">
+Did the user change the amount of contrast between adjacent colors?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast">MDN</a>
+</p>
+
+<ul>
+<li><code>custom</code>: The user has specified a specific set of colors. The colors do not fulfill <code>more</code> nor <code>less</code>.</li>
+<li><code>less</code>: Less contrast is desired.</li>
+<li><code>no-preference</code>: The user has no preference for contrast.</li>
+<li><code>more</code>: More contrast is desired.</li>
+</ul>
 <style>
 @media (prefers-contrast: custom) { .media-prefers-contrast-unsupported { display: none; } .media-prefers-contrast-custom { display: initial; } }
 @media (prefers-contrast: less) { .media-prefers-contrast-unsupported { display: none; } .media-prefers-contrast-less { display: initial; } }
@@ -335,7 +528,15 @@
 </div>
 <div class="media hide media-prefers-reduced-data-no-preference">@media (prefers-reduced-data: no-preference)</div>
 <div class="media hide media-prefers-reduced-data-reduce">@media (prefers-reduced-data: reduce)</div>
-<p class="description">Has the user requested web content that consumes less bandwidth? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data">MDN</a></p>
+<p class="description">
+Has the user requested web content that consumes less bandwidth?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data">MDN</a>
+</p>
+
+<ul>
+<li><code>no-preference</code>: The user has no preference for reduced data usage.</li>
+<li><code>reduce</code>: The user prefers reduced data usage.</li>
+</ul>
 <style>
 @media (prefers-reduced-data: no-preference) { .media-prefers-reduced-data-unsupported { display: none; } .media-prefers-reduced-data-no-preference { display: initial; } }
 @media (prefers-reduced-data: reduce) { .media-prefers-reduced-data-unsupported { display: none; } .media-prefers-reduced-data-reduce { display: initial; } }
@@ -347,7 +548,15 @@
 </div>
 <div class="media hide media-prefers-reduced-motion-no-preference">@media (prefers-reduced-motion: no-preference)</div>
 <div class="media hide media-prefers-reduced-motion-reduce">@media (prefers-reduced-motion: reduce)</div>
-<p class="description">Does the user prefer less motion? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">MDN</a></p>
+<p class="description">
+Does the user prefer less motion?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">MDN</a>
+</p>
+
+<ul>
+<li><code>no-preference</code>: The user has no preference for reduced motion.</li>
+<li><code>reduce</code>: The user prefers reduced motion.</li>
+</ul>
 <style>
 @media (prefers-reduced-motion: no-preference) { .media-prefers-reduced-motion-unsupported { display: none; } .media-prefers-reduced-motion-no-preference { display: initial; } }
 @media (prefers-reduced-motion: reduce) { .media-prefers-reduced-motion-unsupported { display: none; } .media-prefers-reduced-motion-reduce { display: initial; } }
@@ -359,7 +568,15 @@
 </div>
 <div class="media hide media-prefers-reduced-transparency-no-preference">@media (prefers-reduced-transparency: no-preference)</div>
 <div class="media hide media-prefers-reduced-transparency-reduce">@media (prefers-reduced-transparency: reduce)</div>
-<p class="description">Does the user want less transparency or translucent layer effects? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency">MDN</a></p>
+<p class="description">
+Does the user want less transparency or translucent layer effects?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency">MDN</a>
+</p>
+
+<ul>
+<li><code>no-preference</code>: The user has no preference for reduced transparency.</li>
+<li><code>reduce</code>: The user prefers reduced transparency.</li>
+</ul>
 <style>
 @media (prefers-reduced-transparency: no-preference) { .media-prefers-reduced-transparency-unsupported { display: none; } .media-prefers-reduced-transparency-no-preference { display: initial; } }
 @media (prefers-reduced-transparency: reduce) { .media-prefers-reduced-transparency-unsupported { display: none; } .media-prefers-reduced-transparency-reduce { display: initial; } }
@@ -384,13 +601,25 @@
         @media (resolution) <i>JavaScript Required</i>
     </range-finder>
 </div>
-<p class="description">Output pixel density. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution">MDN</a></p>
+<p class="description">
+Output pixel density.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution">MDN</a>
+</p>
+
 
 <div class="media media-scan-unsupported">@media (scan) <span class="unsupported">/* unsupported */</span>
 </div>
 <div class="media hide media-scan-interlace">@media (scan: interlace)</div>
 <div class="media hide media-scan-progressive">@media (scan: progressive)</div>
-<p class="description">Is the display progressive or interlaced? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/scan">MDN</a></p>
+<p class="description">
+Is the display progressive or interlaced?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/scan">MDN</a>
+</p>
+
+<ul>
+<li><code>interlace</code>: The display is interlaced.</li>
+<li><code>progressive</code>: The display is progressive.</li>
+</ul>
 <style>
 @media (scan: interlace) { .media-scan-unsupported { display: none; } .media-scan-interlace { display: initial; } }
 @media (scan: progressive) { .media-scan-unsupported { display: none; } .media-scan-progressive { display: initial; } }
@@ -403,7 +632,16 @@
 <div class="media hide media-scripting-enabled">@media (scripting: enabled)</div>
 <div class="media hide media-scripting-initial-only">@media (scripting: initial-only)</div>
 <div class="media hide media-scripting-none">@media (scripting: none)</div>
-<p class="description">Is JavaScript enabled? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/scripting">MDN</a></p>
+<p class="description">
+Is JavaScript enabled?
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/scripting">MDN</a>
+</p>
+
+<ul>
+<li><code>enabled</code>: JavaScript is enabled.</li>
+<li><code>initial-only</code>: JavaScript is enabled, but the user has requested that it be disabled after the initial page load.</li>
+<li><code>none</code>: JavaScript is disabled.</li>
+</ul>
 <style>
 @media (scripting: enabled) { .media-scripting-unsupported { display: none; } .media-scripting-enabled { display: initial; } }
 @media (scripting: initial-only) { .media-scripting-unsupported { display: none; } .media-scripting-initial-only { display: initial; } }
@@ -416,7 +654,15 @@
 </div>
 <div class="media hide media-shape-rect">@media (shape: rect)</div>
 <div class="media hide media-shape-round">@media (shape: round)</div>
-<p class="description">Distinguish regular and round displays. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/shape">MDN</a></p>
+<p class="description">
+Distinguish regular and round displays.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/shape">MDN</a>
+</p>
+
+<ul>
+<li><code>rect</code>: The display is rectangular.</li>
+<li><code>round</code>: The display is round.</li>
+</ul>
 <style>
 @media (shape: rect) { .media-shape-unsupported { display: none; } .media-shape-rect { display: initial; } }
 @media (shape: round) { .media-shape-unsupported { display: none; } .media-shape-round { display: initial; } }
@@ -429,7 +675,16 @@
 <div class="media hide media-update-none">@media (update: none)</div>
 <div class="media hide media-update-slow">@media (update: slow)</div>
 <div class="media hide media-update-fast">@media (update: fast)</div>
-<p class="description">How frequently can the device modify the appearance of content. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/update">MDN</a></p>
+<p class="description">
+How frequently can the device modify the appearance of content.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/update">MDN</a>
+</p>
+
+<ul>
+<li><code>none</code>: The device cannot modify the appearance of content, such as when it is printed on paper.</li>
+<li><code>slow</code>: The device can modify the appearance of content, but it is slow, such as with an epaper display or severely underpowered device.</li>
+<li><code>fast</code>: The device can modify the appearance of content quickly and animations could be used.</li>
+</ul>
 <style>
 @media (update: none) { .media-update-unsupported { display: none; } .media-update-none { display: initial; } }
 @media (update: slow) { .media-update-unsupported { display: none; } .media-update-slow { display: initial; } }
@@ -442,7 +697,15 @@
 </div>
 <div class="media hide media-video-dynamic-range-high">@media (video-dynamic-range: high)</div>
 <div class="media hide media-video-dynamic-range-standard">@media (video-dynamic-range: standard)</div>
-<p class="description">Combination of brightness, contrast ratio, and color depth supported by video. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/video-dynamic-range">MDN</a></p>
+<p class="description">
+Combination of brightness, contrast ratio, and color depth supported by video.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/video-dynamic-range">MDN</a>
+</p>
+
+<ul>
+<li><code>high</code>: The video supports high peak brightness, high contrast ratio, and color depth greater than 24-bit (8-bits per color component of RGB).</li>
+<li><code>standard</code>: Matches any visual device. A device that matches <code>high</code> will also match <code>standard</code>.</li>
+</ul>
 <style>
 @media (video-dynamic-range: high) { .media-video-dynamic-range-unsupported { display: none; } .media-video-dynamic-range-high { display: initial; } }
 @media (video-dynamic-range: standard) { .media-video-dynamic-range-unsupported { display: none; } .media-video-dynamic-range-standard { display: initial; } }
@@ -462,7 +725,11 @@
         @media (width) <i>JavaScript Required</i>
     </range-finder>
 </div>
-<p class="description">Width of the viewport, including scrollbar. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width">MDN</a></p>
+<p class="description">
+Width of the viewport, including scrollbar.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width">MDN</a>
+</p>
+
 
 
 <script>

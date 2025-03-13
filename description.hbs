@@ -1,1 +1,12 @@
-<p class="description">{{description}} <a href="{{url}}">MDN</a></p>
+<p class="description">
+{{{description}}}
+<a href="{{url}}">MDN</a>
+</p>
+
+{{#if valueDescriptions}}
+<ul>
+{{#valueDescriptions}}
+<li><code>{{value}}</code>: {{{description}}}</li>
+{{/valueDescriptions}}
+</ul>
+{{/if}}

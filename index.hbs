@@ -6,6 +6,7 @@
 .unsupported { text-transform: uppercase; color: red; font-weight: normal; }
 .media { font-weight: bold; }
 .description { margin-left: 1em; }
+code { background-color: #ddd; }
 </style>
 </head>
 <body>
@@ -15,6 +16,8 @@
 <p>You can test these yourself in your browser's developer tools. Try using 'window.matchMedia("(min-width: 10px)").matches' in the console.</p>
 
 <p>Event listeners are added to the MediaQueryList objects to automatically update the display when the media query changes.</p>
+
+<p>Lengths are expressed in different units. It is possible to determine if the viewport is zoomed by comparing <code>em</code> units to <code>px</code> units. The <code>px</code> unit should be 16 times larger than the <code>em</code> unit when the viewport is zoomed to 100%.</p>
 
 {{#queries}}
 {{> query}}
