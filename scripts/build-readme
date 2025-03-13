@@ -6,6 +6,8 @@ let content = `# Active Media Queries
 
 Finds a list of all active media queries supported by your browser. Will show you exactly what matches, plus it will respond to changes.
 
+[See it live! 🚀](https://fidian.github.io/active-media-queries/)
+
 ## What's detected
 
 `;

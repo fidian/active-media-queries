@@ -2,6 +2,8 @@
 
 Finds a list of all active media queries supported by your browser. Will show you exactly what matches, plus it will respond to changes.
 
+[See it live! 🚀](https://fidian.github.io/active-media-queries/)
+
 ## What's detected
 
 * [Media Type](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types) - The output device type.
