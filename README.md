@@ -24,7 +24,7 @@ Finds a list of all active media queries supported by your browser. Will show yo
 * [height](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/height) -  The output device height.
 * [hover](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) - Can the user hover over elements?
 * [inverted-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors) - Is the user agent or OS inverting colors?
-* [monochrome](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/monochrome) - Bits per pixel in the device's monochrome frame buffer.
+* [monochrome](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/monochrome) - Bits per pixel in the device&#x27;s monochrome frame buffer.
 * [orientation](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation) - Viewport orientation.
 * [overflow-block](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-block) - How does the device handle overflows along the block axis?
 * [overflow-inline](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-inline) - Can content overflowing the inline axis be scrolled?
@@ -42,6 +42,6 @@ Finds a list of all active media queries supported by your browser. Will show yo
 * [video-dynamic-range](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/video-dynamic-range) - Combination of brightness, contrast ratio, and color depth supported by video.
 * [width](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width) - Width of the viewport, including scrollbar.
 
-## Need more?
+## How it works
 
-The repository contains a file called `queries.json` that drives everything. Update it and use `make` to build the HTML and the README.
+The repository contains a file called `queries.json` that drives everything. Update it and run \`make\` to build the HTML and the README using Node.js.

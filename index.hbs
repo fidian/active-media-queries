@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Active Media Queries</title>
+<style>
+.hide { display: none; }
+.unsupported { text-transform: uppercase; color: red; font-weight: normal; }
+.media { font-weight: bold; }
+.description { margin-left: 1em; }
+</style>
+</head>
+<body>
+
+<h1>Active Media Queries</h1>
+
+<p>You can test these yourself in your browser's developer tools. Try using 'window.matchMedia("(min-width: 10px)").matches' in the console.</p>
+
+<p>Event listeners are added to the MediaQueryList objects to automatically update the display when the media query changes.</p>
+
+{{#queries}}
+{{> query}}
+{{/queries}}
+
+<script>
+{{{fudgel}}}
+{{{rangeFinder}}}
+</script></body></html>

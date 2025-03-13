@@ -9,10 +9,20 @@
 </style>
 </head>
 <body>
+
 <h1>Active Media Queries</h1>
+
 <p>You can test these yourself in your browser's developer tools. Try using 'window.matchMedia("(min-width: 10px)").matches' in the console.</p>
 
-<div class="media media-type-unsupported">@media print or screen <span class="unsupported">/* unsupported */</span></div>
+<p>Event listeners are added to the MediaQueryList objects to automatically update the display when the media query changes.</p>
+
+
+<div class="media media-type-unsupported">
+<div>@media print <span class="unsupported">/* unsupported */</span>
+</div>
+<div>@media screen <span class="unsupported">/* unsupported */</span>
+</div>
+</div>
 <div class="media hide media-type-print">@media print</div>
 <div class="media hide media-type-screen">@media screen</div>
 <p class="description">The output device type. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types">MDN</a></p>
@@ -21,7 +31,9 @@
 @media screen { .media-type-unsupported { display: none; } .media-type-screen { display: initial; } }
 </style>
 
-<div class="media media-any-hover-unsupported">@media (any-hover) <span class="unsupported">/* unsupported */</span></div>
+
+<div class="media media-any-hover-unsupported">@media (any-hover) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-any-hover-hover">@media (any-hover: hover)</div>
 <div class="media hide media-any-hover-none">@media (any-hover: none)</div>
 <p class="description">Can the user hover over elements? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover">MDN</a></p>
@@ -30,7 +42,10 @@
 @media (any-hover: none) { .media-any-hover-unsupported { display: none; } .media-any-hover-none { display: initial; } }
 </style>
 
-<div class="media media-any-pointer-unsupported">@media (any-pointer) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-any-pointer-unsupported">@media (any-pointer) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-any-pointer-coarse">@media (any-pointer: coarse)</div>
 <div class="media hide media-any-pointer-fine">@media (any-pointer: fine)</div>
 <div class="media hide media-any-pointer-none">@media (any-pointer: none)</div>
@@ -41,17 +56,28 @@
 @media (any-pointer: none) { .media-any-pointer-unsupported { display: none; } .media-any-pointer-none { display: initial; } }
 </style>
 
-<div class="media"><range-finder query="aspect-ratio" decimals="5" unit="/1">
-@media (aspect-ratio) <i>JavaScript Required</i>
-</range-finder></div>
+
+
+
+
+<div class="media">
+    <range-finder query="aspect-ratio" decimals="5" unit="/1">
+        @media (aspect-ratio) <i>JavaScript Required</i>
+    </range-finder>
+</div>
 <p class="description">The width-to-height aspect ratio of the viewport. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio">MDN</a></p>
 
-<div class="media"><range-finder query="color" decimals="0" unit="">
-@media (color) <i>JavaScript Required</i>
-</range-finder></div>
+
+
+<div class="media">
+    <range-finder query="color" decimals="0" unit="">
+        @media (color) <i>JavaScript Required</i>
+    </range-finder>
+</div>
 <p class="description">Number of bits of color. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color">MDN</a></p>
 
-<div class="media media-color-gamut-unsupported">@media (color-gamut) <span class="unsupported">/* unsupported */</span></div>
+<div class="media media-color-gamut-unsupported">@media (color-gamut) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-color-gamut-p3">@media (color-gamut: p3)</div>
 <div class="media hide media-color-gamut-rec2020">@media (color-gamut: rec2020)</div>
 <div class="media hide media-color-gamut-srgb">@media (color-gamut: srgb)</div>
@@ -62,25 +88,42 @@
 @media (color-gamut: srgb) { .media-color-gamut-unsupported { display: none; } .media-color-gamut-srgb { display: initial; } }
 </style>
 
-<div class="media"><range-finder query="color-index" decimals="0" unit="">
-@media (color-index) <i>JavaScript Required</i>
-</range-finder></div>
+
+
+
+
+<div class="media">
+    <range-finder query="color-index" decimals="0" unit="">
+        @media (color-index) <i>JavaScript Required</i>
+    </range-finder>
+</div>
 <p class="description">Number of indexed colors for display. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-index">MDN</a></p>
 
-<div class="media"><range-finder query="device-aspect-ratio" decimals="5" unit="/1">
-@media (device-aspect-ratio) <i>JavaScript Required</i>
-</range-finder></div>
+
+
+<div class="media">
+    <range-finder query="device-aspect-ratio" decimals="5" unit="/1">
+        @media (device-aspect-ratio) <i>JavaScript Required</i>
+    </range-finder>
+</div>
 <p class="description">DEPRECATED - Width-to-height aspect ratio of output. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-aspect-ratio">MDN</a></p>
 
-<div class="media"><range-finder query="device-height" decimals="5" unit="em">
-@media (device-height) <i>JavaScript Required</i>
-</range-finder></div>
-<div class="media"><range-finder query="device-height" decimals="5" unit="px">
-@media (device-height) <i>JavaScript Required</i>
-</range-finder></div>
+
+
+<div class="media">
+    <range-finder query="device-height" decimals="5" unit="em">
+        @media (device-height) <i>JavaScript Required</i>
+    </range-finder>
+</div>
+<div class="media">
+    <range-finder query="device-height" decimals="5" unit="px">
+        @media (device-height) <i>JavaScript Required</i>
+    </range-finder>
+</div>
 <p class="description">DEPRECATED - Output device height. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-height">MDN</a></p>
 
-<div class="media media-device-posture-unsupported">@media (device-posture) <span class="unsupported">/* unsupported */</span></div>
+<div class="media media-device-posture-unsupported">@media (device-posture) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-device-posture-continuous">@media (device-posture: continuous)</div>
 <div class="media hide media-device-posture-folded">@media (device-posture: folded)</div>
 <p class="description">If viewport is flat or folded. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-posture">MDN</a></p>
@@ -89,15 +132,24 @@
 @media (device-posture: folded) { .media-device-posture-unsupported { display: none; } .media-device-posture-folded { display: initial; } }
 </style>
 
-<div class="media"><range-finder query="device-width" decimals="5" unit="em">
-@media (device-width) <i>JavaScript Required</i>
-</range-finder></div>
-<div class="media"><range-finder query="device-width" decimals="5" unit="px">
-@media (device-width) <i>JavaScript Required</i>
-</range-finder></div>
+
+
+
+
+<div class="media">
+    <range-finder query="device-width" decimals="5" unit="em">
+        @media (device-width) <i>JavaScript Required</i>
+    </range-finder>
+</div>
+<div class="media">
+    <range-finder query="device-width" decimals="5" unit="px">
+        @media (device-width) <i>JavaScript Required</i>
+    </range-finder>
+</div>
 <p class="description">DEPRECATED - Output device width. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width">MDN</a></p>
 
-<div class="media media-display-mode-unsupported">@media (display-mode) <span class="unsupported">/* unsupported */</span></div>
+<div class="media media-display-mode-unsupported">@media (display-mode) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-display-mode-browser">@media (display-mode: browser)</div>
 <div class="media hide media-display-mode-fullscreen">@media (display-mode: fullscreen)</div>
 <div class="media hide media-display-mode-minimal-ui">@media (display-mode: minimal-ui)</div>
@@ -112,7 +164,10 @@
 @media (display-mode: window-controls-overlay) { .media-display-mode-unsupported { display: none; } .media-display-mode-window-controls-overlay { display: initial; } }
 </style>
 
-<div class="media media-dynamic-range-unsupported">@media (dynamic-range) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-dynamic-range-unsupported">@media (dynamic-range) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-dynamic-range-high">@media (dynamic-range: high)</div>
 <div class="media hide media-dynamic-range-standard">@media (dynamic-range: standard)</div>
 <p class="description">The combination of brightness, contrast ratio, and color depth. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/dynamic-range">MDN</a></p>
@@ -121,7 +176,10 @@
 @media (dynamic-range: standard) { .media-dynamic-range-unsupported { display: none; } .media-dynamic-range-standard { display: initial; } }
 </style>
 
-<div class="media media-forced-colors-unsupported">@media (forced-colors) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-forced-colors-unsupported">@media (forced-colors) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-forced-colors-active">@media (forced-colors: active)</div>
 <div class="media hide media-forced-colors-none">@media (forced-colors: none)</div>
 <p class="description">Does the user agent restrict colors? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors">MDN</a></p>
@@ -130,7 +188,10 @@
 @media (forced-colors: none) { .media-forced-colors-unsupported { display: none; } .media-forced-colors-none { display: initial; } }
 </style>
 
-<div class="media media-grid-unsupported">@media (grid) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-grid-unsupported">@media (grid) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-grid-0">@media (grid: 0)</div>
 <div class="media hide media-grid-1">@media (grid: 1)</div>
 <p class="description">Does the device use a grid or a bitmap screen? 0 is bitmap, 1 is grid. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/grid">MDN</a></p>
@@ -139,15 +200,24 @@
 @media (grid: 1) { .media-grid-unsupported { display: none; } .media-grid-1 { display: initial; } }
 </style>
 
-<div class="media"><range-finder query="height" decimals="5" unit="em">
-@media (height) <i>JavaScript Required</i>
-</range-finder></div>
-<div class="media"><range-finder query="height" decimals="5" unit="px">
-@media (height) <i>JavaScript Required</i>
-</range-finder></div>
+
+
+
+
+<div class="media">
+    <range-finder query="height" decimals="5" unit="em">
+        @media (height) <i>JavaScript Required</i>
+    </range-finder>
+</div>
+<div class="media">
+    <range-finder query="height" decimals="5" unit="px">
+        @media (height) <i>JavaScript Required</i>
+    </range-finder>
+</div>
 <p class="description"> The output device height. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/height">MDN</a></p>
 
-<div class="media media-hover-unsupported">@media (hover) <span class="unsupported">/* unsupported */</span></div>
+<div class="media media-hover-unsupported">@media (hover) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-hover-hover">@media (hover: hover)</div>
 <div class="media hide media-hover-none">@media (hover: none)</div>
 <p class="description">Can the user hover over elements? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover">MDN</a></p>
@@ -156,7 +226,10 @@
 @media (hover: none) { .media-hover-unsupported { display: none; } .media-hover-none { display: initial; } }
 </style>
 
-<div class="media media-inverted-colors-unsupported">@media (inverted-colors) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-inverted-colors-unsupported">@media (inverted-colors) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-inverted-colors-inverted">@media (inverted-colors: inverted)</div>
 <div class="media hide media-inverted-colors-none">@media (inverted-colors: none)</div>
 <p class="description">Is the user agent or OS inverting colors? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors">MDN</a></p>
@@ -165,12 +238,19 @@
 @media (inverted-colors: none) { .media-inverted-colors-unsupported { display: none; } .media-inverted-colors-none { display: initial; } }
 </style>
 
-<div class="media"><range-finder query="monochrome" decimals="0" unit="">
-@media (monochrome) <i>JavaScript Required</i>
-</range-finder></div>
-<p class="description">Bits per pixel in the device's monochrome frame buffer. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/monochrome">MDN</a></p>
 
-<div class="media media-orientation-unsupported">@media (orientation) <span class="unsupported">/* unsupported */</span></div>
+
+
+
+<div class="media">
+    <range-finder query="monochrome" decimals="0" unit="">
+        @media (monochrome) <i>JavaScript Required</i>
+    </range-finder>
+</div>
+<p class="description">Bits per pixel in the device&#x27;s monochrome frame buffer. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/monochrome">MDN</a></p>
+
+<div class="media media-orientation-unsupported">@media (orientation) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-orientation-landscape">@media (orientation: landscape)</div>
 <div class="media hide media-orientation-portrait">@media (orientation: portrait)</div>
 <p class="description">Viewport orientation. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation">MDN</a></p>
@@ -179,7 +259,10 @@
 @media (orientation: portrait) { .media-orientation-unsupported { display: none; } .media-orientation-portrait { display: initial; } }
 </style>
 
-<div class="media media-overflow-block-unsupported">@media (overflow-block) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-overflow-block-unsupported">@media (overflow-block) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-overflow-block-none">@media (overflow-block: none)</div>
 <div class="media hide media-overflow-block-optional-paged">@media (overflow-block: optional-paged)</div>
 <div class="media hide media-overflow-block-scroll">@media (overflow-block: scroll)</div>
@@ -192,7 +275,10 @@
 @media (overflow-block: visible) { .media-overflow-block-unsupported { display: none; } .media-overflow-block-visible { display: initial; } }
 </style>
 
-<div class="media media-overflow-inline-unsupported">@media (overflow-inline) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-overflow-inline-unsupported">@media (overflow-inline) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-overflow-inline-none">@media (overflow-inline: none)</div>
 <div class="media hide media-overflow-inline-scroll">@media (overflow-inline: scroll)</div>
 <p class="description">Can content overflowing the inline axis be scrolled? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-inline">MDN</a></p>
@@ -201,7 +287,10 @@
 @media (overflow-inline: scroll) { .media-overflow-inline-unsupported { display: none; } .media-overflow-inline-scroll { display: initial; } }
 </style>
 
-<div class="media media-pointer-unsupported">@media (pointer) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-pointer-unsupported">@media (pointer) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-pointer-coarse">@media (pointer: coarse)</div>
 <div class="media hide media-pointer-fine">@media (pointer: fine)</div>
 <div class="media hide media-pointer-none">@media (pointer: none)</div>
@@ -212,7 +301,10 @@
 @media (pointer: none) { .media-pointer-unsupported { display: none; } .media-pointer-none { display: initial; } }
 </style>
 
-<div class="media media-prefers-color-scheme-unsupported">@media (prefers-color-scheme) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-prefers-color-scheme-unsupported">@media (prefers-color-scheme) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-prefers-color-scheme-dark">@media (prefers-color-scheme: dark)</div>
 <div class="media hide media-prefers-color-scheme-light">@media (prefers-color-scheme: light)</div>
 <p class="description">Does the user prefer a light or dark color scheme? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">MDN</a></p>
@@ -221,7 +313,10 @@
 @media (prefers-color-scheme: light) { .media-prefers-color-scheme-unsupported { display: none; } .media-prefers-color-scheme-light { display: initial; } }
 </style>
 
-<div class="media media-prefers-contrast-unsupported">@media (prefers-contrast) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-prefers-contrast-unsupported">@media (prefers-contrast) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-prefers-contrast-custom">@media (prefers-contrast: custom)</div>
 <div class="media hide media-prefers-contrast-less">@media (prefers-contrast: less)</div>
 <div class="media hide media-prefers-contrast-no-preference">@media (prefers-contrast: no-preference)</div>
@@ -234,7 +329,10 @@
 @media (prefers-contrast: more) { .media-prefers-contrast-unsupported { display: none; } .media-prefers-contrast-more { display: initial; } }
 </style>
 
-<div class="media media-prefers-reduced-data-unsupported">@media (prefers-reduced-data) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-prefers-reduced-data-unsupported">@media (prefers-reduced-data) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-prefers-reduced-data-no-preference">@media (prefers-reduced-data: no-preference)</div>
 <div class="media hide media-prefers-reduced-data-reduce">@media (prefers-reduced-data: reduce)</div>
 <p class="description">Has the user requested web content that consumes less bandwidth? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data">MDN</a></p>
@@ -243,7 +341,10 @@
 @media (prefers-reduced-data: reduce) { .media-prefers-reduced-data-unsupported { display: none; } .media-prefers-reduced-data-reduce { display: initial; } }
 </style>
 
-<div class="media media-prefers-reduced-motion-unsupported">@media (prefers-reduced-motion) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-prefers-reduced-motion-unsupported">@media (prefers-reduced-motion) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-prefers-reduced-motion-no-preference">@media (prefers-reduced-motion: no-preference)</div>
 <div class="media hide media-prefers-reduced-motion-reduce">@media (prefers-reduced-motion: reduce)</div>
 <p class="description">Does the user prefer less motion? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">MDN</a></p>
@@ -252,7 +353,10 @@
 @media (prefers-reduced-motion: reduce) { .media-prefers-reduced-motion-unsupported { display: none; } .media-prefers-reduced-motion-reduce { display: initial; } }
 </style>
 
-<div class="media media-prefers-reduced-transparency-unsupported">@media (prefers-reduced-transparency) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-prefers-reduced-transparency-unsupported">@media (prefers-reduced-transparency) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-prefers-reduced-transparency-no-preference">@media (prefers-reduced-transparency: no-preference)</div>
 <div class="media hide media-prefers-reduced-transparency-reduce">@media (prefers-reduced-transparency: reduce)</div>
 <p class="description">Does the user want less transparency or translucent layer effects? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency">MDN</a></p>
@@ -261,18 +365,29 @@
 @media (prefers-reduced-transparency: reduce) { .media-prefers-reduced-transparency-unsupported { display: none; } .media-prefers-reduced-transparency-reduce { display: initial; } }
 </style>
 
-<div class="media"><range-finder query="resolution" decimals="5" unit="dpi">
-@media (resolution) <i>JavaScript Required</i>
-</range-finder></div>
-<div class="media"><range-finder query="resolution" decimals="5" unit="dpcm">
-@media (resolution) <i>JavaScript Required</i>
-</range-finder></div>
-<div class="media"><range-finder query="resolution" decimals="5" unit="dppx">
-@media (resolution) <i>JavaScript Required</i>
-</range-finder></div>
+
+
+
+
+<div class="media">
+    <range-finder query="resolution" decimals="5" unit="dpi">
+        @media (resolution) <i>JavaScript Required</i>
+    </range-finder>
+</div>
+<div class="media">
+    <range-finder query="resolution" decimals="5" unit="dpcm">
+        @media (resolution) <i>JavaScript Required</i>
+    </range-finder>
+</div>
+<div class="media">
+    <range-finder query="resolution" decimals="5" unit="dppx">
+        @media (resolution) <i>JavaScript Required</i>
+    </range-finder>
+</div>
 <p class="description">Output pixel density. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution">MDN</a></p>
 
-<div class="media media-scan-unsupported">@media (scan) <span class="unsupported">/* unsupported */</span></div>
+<div class="media media-scan-unsupported">@media (scan) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-scan-interlace">@media (scan: interlace)</div>
 <div class="media hide media-scan-progressive">@media (scan: progressive)</div>
 <p class="description">Is the display progressive or interlaced? <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/scan">MDN</a></p>
@@ -281,7 +396,10 @@
 @media (scan: progressive) { .media-scan-unsupported { display: none; } .media-scan-progressive { display: initial; } }
 </style>
 
-<div class="media media-scripting-unsupported">@media (scripting) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-scripting-unsupported">@media (scripting) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-scripting-enabled">@media (scripting: enabled)</div>
 <div class="media hide media-scripting-initial-only">@media (scripting: initial-only)</div>
 <div class="media hide media-scripting-none">@media (scripting: none)</div>
@@ -292,7 +410,10 @@
 @media (scripting: none) { .media-scripting-unsupported { display: none; } .media-scripting-none { display: initial; } }
 </style>
 
-<div class="media media-shape-unsupported">@media (shape) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-shape-unsupported">@media (shape) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-shape-rect">@media (shape: rect)</div>
 <div class="media hide media-shape-round">@media (shape: round)</div>
 <p class="description">Distinguish regular and round displays. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/shape">MDN</a></p>
@@ -301,7 +422,10 @@
 @media (shape: round) { .media-shape-unsupported { display: none; } .media-shape-round { display: initial; } }
 </style>
 
-<div class="media media-update-unsupported">@media (update) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-update-unsupported">@media (update) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-update-none">@media (update: none)</div>
 <div class="media hide media-update-slow">@media (update: slow)</div>
 <div class="media hide media-update-fast">@media (update: fast)</div>
@@ -312,7 +436,10 @@
 @media (update: fast) { .media-update-unsupported { display: none; } .media-update-fast { display: initial; } }
 </style>
 
-<div class="media media-video-dynamic-range-unsupported">@media (video-dynamic-range) <span class="unsupported">/* unsupported */</span></div>
+
+
+<div class="media media-video-dynamic-range-unsupported">@media (video-dynamic-range) <span class="unsupported">/* unsupported */</span>
+</div>
 <div class="media hide media-video-dynamic-range-high">@media (video-dynamic-range: high)</div>
 <div class="media hide media-video-dynamic-range-standard">@media (video-dynamic-range: standard)</div>
 <p class="description">Combination of brightness, contrast ratio, and color depth supported by video. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/video-dynamic-range">MDN</a></p>
@@ -321,23 +448,37 @@
 @media (video-dynamic-range: standard) { .media-video-dynamic-range-unsupported { display: none; } .media-video-dynamic-range-standard { display: initial; } }
 </style>
 
-<div class="media"><range-finder query="width" decimals="5" unit="em">
-@media (width) <i>JavaScript Required</i>
-</range-finder></div>
-<div class="media"><range-finder query="width" decimals="5" unit="px">
-@media (width) <i>JavaScript Required</i>
-</range-finder></div>
+
+
+
+
+<div class="media">
+    <range-finder query="width" decimals="5" unit="em">
+        @media (width) <i>JavaScript Required</i>
+    </range-finder>
+</div>
+<div class="media">
+    <range-finder query="width" decimals="5" unit="px">
+        @media (width) <i>JavaScript Required</i>
+    </range-finder>
+</div>
 <p class="description">Width of the viewport, including scrollbar. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width">MDN</a></p>
-<script>var t,s;t=this,s=function(t){const s=()=>{const t=new WeakMap;return(s,e)=>t.get(s)||e&&t.set(s,e).get(s)},e=s(),n=s(),o=s(),c=new Map,r=s(),i=s(),l=s(),f=s(),h=s(),u=(t,s,e)=>{const n=f(t,{});let o=n[s];if(!o){let e=t[s];const c=Object.getOwnPropertyDescriptor(t,s)||{};o=[],n[s]=o,Object.defineProperty(t,s,{get:c.get||(()=>e),set:function(t){const s=e;if(t!==s){c.set?.(t),e=t;for(const e of o)e(this,t,s)}}})}o.push(e)},a={},d=s(),p=s(),w=s(),b=(t,s,...e)=>{m(a,t,s,...e),m(d(s)||{},t,...e)},m=(t,s,...e)=>{for(const n of t[s]||[])t[s].includes(n)&&n(...e)},$=t=>{const s=[t];let e;for(;e=s.shift();){for(const t of p(e,[]))t();for(const t of e.childNodes)s.push(t)}},g=(t,s,e,n)=>{const o=d(t,{});o[e]?o[e].push(n):o[e]=[n],p(s,[]).push((()=>{const s=d(t);s?.[e]&&(s[e]=s[e].filter((t=>t!==n)))}))},y=(t,s)=>((a[t]||(a[t]=[])).push(s),()=>{a[t]=a[t].filter((t=>t!==s))}),C=(t,s,e)=>{const n=w(s,{});n[e]||(n[e]=1,u(s,e,((s,n,o)=>{b(`set:${e}`,s,t,n,o)})))},E=(t,s,e,n={})=>{t.dispatchEvent(new CustomEvent(s,{bubbles:!0,cancelable:!1,composed:!0,detail:e,...n}))},k=(t,s)=>{if(t.onChange){const s=o(t);for(const e of[...s.prop||[],...s.attr||[]])t.onChange(e,t[e],t[e])}b(`set:${s||""}`,t,t)},M=t=>t.entries?t.entries():Object.entries(t),S=t=>{const s=new Map;return e=>{if(s.has(e))return s.get(e);const n=t(e);return s.set(e,n),n}},v=t=>t.replace(/-(\p{Ll})/gu,(t=>t[1].toUpperCase())),_=t=>t.replace(/\p{Lu}/gu,(t=>`-${t[0]}`.toLowerCase())),x=t=>`${t??""}`,L=t=>"string"==typeof t,T=(t,s)=>t.getAttribute(s),O=t=>{const s=c.get(t);return s?.shadowRoot??s??null},j=(t,s,e)=>{!0===e&&(e=""),L(e)?t.setAttribute(s,e):t.removeAttribute(s)},A=(t,s)=>[...new Set([...t,...s])],P=(t,s)=>"function"==typeof t[s]?t[s].bind(t):t[s],H=document,N=window,D=t=>t.cloneNode(!0),F=t=>H.createElement(t),G=()=>H.createDocumentFragment(),J=t=>{const s=F("style");return s.append((t=>H.createTextNode(t))(t)),s},K=()=>F("template"),R=(t,s)=>H.createTreeWalker(t,s),W=t=>{const s=H.implementation.createHTMLDocument(""),e=s.createElement("style");return e.textContent=t,s.body.append(e),e.sheet.cssRules||[]};function q(t,s,e,n,o){g(t,s,"set:",e);for(const c of n){const n=`set:${c}`;c in o?(C(t,o,c),g(o,s,n,e)):(C(t,t,c),u(t,c,((t,s,e)=>{t.onChange?.(c,s,e)})),g(t,s,n,e))}}const z=t=>{let s=h(t);if(t){let e=t.parentNode;for(;!s&&e;)s=h(e),e=e.parentNode}return s||(s={},h(H.body,s)),s},B=(t,s)=>{const e=Object.create(t);return h(s,e),e},I=(t,s)=>new Proxy(t,{get:(t,e)=>P(e in s?s:t,e)});let Q="",U=0,V=0;const X={b:"\b",f:"\f",n:"\n",r:"\r",t:"\t",v:"\v"},Y={"-":t=>s=>-t(s),"!":t=>s=>!t(s),"~":t=>s=>~t(s),"+":t=>s=>+t(s)},Z={"||":[1,(t,s)=>e=>t(e)||s(e)],"&&":[2,(t,s)=>e=>t(e)&&s(e)],"|":[3,(t,s)=>e=>t(e)|s(e)],"^":[4,(t,s)=>e=>t(e)^s(e)],"&":[5,(t,s)=>e=>t(e)&s(e)],"==":[6,(t,s)=>e=>t(e)==s(e)],"!=":[6,(t,s)=>e=>t(e)!=s(e)],"===":[6,(t,s)=>e=>t(e)===s(e)],"!==":[6,(t,s)=>e=>t(e)!==s(e)],"<":[7,(t,s)=>e=>t(e)<s(e)],">":[7,(t,s)=>e=>t(e)>s(e)],"<=":[7,(t,s)=>e=>t(e)<=s(e)],">=":[7,(t,s)=>e=>t(e)>=s(e)],"<<":[8,(t,s)=>e=>t(e)<<s(e)],">>":[8,(t,s)=>e=>t(e)>>s(e)],">>>":[8,(t,s)=>e=>t(e)>>>s(e)],"+":[9,(t,s)=>e=>t(e)+s(e)],"-":[9,(t,s)=>e=>t(e)-s(e)],"*":[10,(t,s)=>e=>t(e)*s(e)],"/":[10,(t,s)=>e=>t(e)/s(e)],"%":[10,(t,s)=>e=>t(e)%s(e)]},tt={true:()=>!0,false:()=>!1,null:()=>null},st=t=>{Q=t,U=0,et(0);let s=[()=>{},[]];try{s=lt()||rt()}catch(t){}return s},et=(t=1)=>{U+=t,V=Q.charCodeAt(U)},nt=()=>Q.charAt(U),ot=t=>t>=48&&t<=57,ct=t=>t>=65&&t<=90||t>=97&&t<=122||t>=128||36===t||95===t,rt=()=>{const t=`Parse error at index ${U}: ${Q}`;throw console.error(t),new Error(t)},it=()=>{for(;32===V||9===V||10===V||13===V;)et()},lt=()=>{const t=ht();return it(),t},ft=()=>{it();let t,s=Q.substr(U,3),e=3;for(;e>0;){if(t=Z[s],t){et(e);break}s=s.substr(0,--e)}return t},ht=()=>{let t,s,e,n,o,c,r;if(o=ut(),!o)return o;if(s=ft(),!s)return o;for(c=ut()||rt(),n=[o,s,c],r=()=>{let t=n.pop(),s=n.pop(),e=n.pop();n.push([s[1](e[0],t[0]),A(e[1],t[1])])};e=ft();){for(;n.length>2&&e[0]<=n[n.length-2][0];)r();t=ut()||rt(),n.push(e,t)}for(;n.length>1;)r();return n[0]},ut=()=>{let t;if(it(),ot(V)||46===V)return dt();if(39===V||34===V)t=pt();else{const s=Y[nt()];if(s){et();const t=ut()||rt();return[s(t[0]),t[1]]}ct(V)||rt();const e=wt();t=tt[e]?[tt[e],[]]:[t=>P(t,e),[e]]}return at(t)},at=t=>{for(it();46===V||91===V||40===V||63===V;){let s,e,n=[],o=t;if(63===V&&(et(),it(),46!==V&&rt(),s=!0),91===V){et();const t=lt()||rt();e=(s,e)=>P(s,t[0](e)),n=t[1],93!==V&&rt(),et()}else if(40===V){et();const t=bt();e=(s,e)=>s(...t.map((t=>t[0](e)))),n=t.reduce(((t,s)=>A(t,s[1])),n)}else if(46===V){et(),it();const t=wt();e=s=>P(s,t)}else rt();t=s?[t=>{const s=o[0](t);return void 0===s?void 0:e(s,t)},A(o[1],n)]:[t=>e(o[0](t),t),A(o[1],n)],it()}return t},dt=()=>{let t="";for(;ot(V);)t+=nt(),et();if(46===V)for(t+=".",et();ot(V);)t+=nt(),et();if(101===V||69===V){t+=nt(),et(),43!==V&&45!==V||(t+=nt(),et());let s=!0;for(;ot(V);)t+=nt(),et(),s=!1;s&&rt()}ct(V)?rt():46!==V&&"."!==t||rt();const s=parseFloat(t);return[()=>s,[]]},pt=()=>{let t="";const s=V;for(et();U<Q.length&&V!==s;){if(92===V){et();const s=nt();t+=X[s]||s}else t+=nt();et()}return U>=Q.length&&rt(),et(),[()=>t,[]]},wt=()=>{let t=U;for(ct(V)?et():rt();U<Q.length&&(ct(V)||ot(V));)et();return Q.slice(t,U)},bt=()=>{const t=[];for(it();41!==V;)U>=Q.length&&rt(),t.push(lt()||rt()),it(),44===V?(et(),it()):41!==V&&rt();return et(),t},mt=t=>{const s=t.split(/{{(.*?)}}/);if(s.length<2)return null;const e=[];let n=!1,o=[];for(const t of s){if(n){const s=st(t);e.push(s[0]),o=A(o,s[1])}else e.push(t);n=!n}return[e,o]},$t=t=>t?[s=>t[0].map((t=>x(t?.call?t(s):t))).join(""),t[1]]:null,gt=S((t=>{const s=mt(t),e=s?.[0];return 3===e?.length&&""===e[0]&&""===e[2]?[t=>{const s=e[1](t);return"boolean"==typeof s?s:x(s)},s[1]]:$t(s)})),yt=S((t=>$t(mt(t)))),Ct={window:()=>{},document:()=>{},stop:t=>t.stopPropagation(),prevent:t=>t.preventDefault(),self:(t,s)=>t.target!==s,outside:(t,s)=>s.contains(t.target),ctrl:t=>!t.ctrlKey,shift:t=>!t.shiftKey,alt:t=>!t.altKey,meta:t=>!t.metaKey,left:t=>0!==t.button,middle:t=>1!==t.button,right:t=>2!==t.button,exact:(t,s,e)=>["ctrl","shift","alt","meta"].some((s=>t[`${s}Key`]&&!e.has(s)))},Et=[{"*for":(t,s,e,n)=>{let o="key",c="value";const r=n.match(/^\s*(?:(?:(\S+)\s*,\s*)?(\S+)\s+of\s+)?(\S+)\s*$/);r&&(o=r[1]||o,c=r[2]||c,n=r[3]);const i=st(n),l=z(s);let f=new Map;const h=t=>{const n=i[0](I(t,l))||[];let r=f;f=new Map;let h=s;for(const[s,i]of M(n)){let n=r.get(s);if(r.delete(s),n===h.nextSibling)z(n)[c]=i;else{n&&($(n),n.remove()),n=D(e);const r=B(l,n);r[o]=s,r[c]=i,_t(n,t),h.after(n)}h=n,f.set(s,h)}for(const t of r.values())$(t),t.remove()};q(t,s,h,i[1],l),h(t)},"*if":(t,s,e,n)=>{const o=st(n),c=z(s);let r=null;const i=t=>{o[0](I(t,c))?r||(r=D(e),B(c,r),_t(r,t),s.after(r)):r&&($(r),r.remove(),r=null)};q(t,s,i,o[1],c),i(t)},"*repeat":(t,s,e,n)=>{let o="index";const c=n.match(/^(\S+)\s+as\s+(\S+)$/);c&&(n=c[1],o=c[2]);const r=st(n),i=z(s);let l=[];const f=t=>{let n=+r[0](I(t,i));for(;l.length>n;){const t=l.pop();$(t),t.remove()}let c=l.length+1,f=l[c-1]||s;for(;l.length<n;){let s=D(e);B(i,s)[o]=c++,_t(s,t),l.push(s),f.after(s),f=s}};q(t,s,f,r[1],i),f(t)}},{"":(t,s,e,n)=>{const o=gt(e);if(o){const e=z(s),c=t=>{j(s,n,o[0](I(t,e)))};q(t,s,c,o[1],e),c(t)}},"@":(t,s,e,n)=>{const[o,...c]=v(n.slice(1)).split("."),r=Object.create(z(s)),i=st(e),l={},f=new Set(c);let h=s;for(const t of["passive","capture","once"])f.has(t)&&(l[t]=!0);f.has("window")&&(h=N),(f.has("document")||f.has("outside"))&&(h=H),h.addEventListener(o,(e=>{c.some((t=>(Ct[t]||(s=>{return e=s.key,_(e.replace(/^\p{Lu}/gu,(t=>t.toLowerCase())))!==(t.match(/^code-\d+$/)?String.fromCodePoint(+t.split("-")[1]):t);var e}))(e,s,f)))||(s=>{r.$event=s,i[0](I(t,r))})(e)}),l),j(s,n)},"#ref":(t,s,e,n)=>{t[v(e)]=s,j(s,n)},".":(t,s,e,n)=>{const o=st(e),c=v(n.slice(1)),r=z(s),i=t=>{const e=o[0](I(t,r));s[c]=e};q(t,s,i,o[1],r),i(t),j(s,n)}}];function kt(t,s){if(1===s.nodeType)for(const e of[...s.attributes]){const n=e.nodeName,o=n.charAt(0),c=Et[1],r=c[n]||c[o]||c[""];r?.(t,s,e.nodeValue||"",n)}}const Mt=(t,s,e)=>{const n=e.attributes;if(1===e.nodeType&&n){let r;for(const[t,s]of M(Et[0])){const e=n.getNamedItem(t);if(e){if(r)throw new Error(`${r[0]} breaks ${t}`);r=[t,s,e.nodeValue||""]}}if(r){const n=(o=`${r[0]}=${c=r[2],JSON.stringify(c)}`,H.createComment(o));return e.before(n),s.previousNode(),e.remove(),j(e,r[0]),r[1](t,n,e,r[2],r[0]),1}}var o,c};function St(t,s){if(3===s.nodeType){const e=yt(s.textContent||"");if(e){const n=z(s),o=t=>{s.nodeValue=e[0](I(t,n))};return q(t,s,o,e[1],n),o(t),1}}}const vt=(t,s)=>{const e=R(t,133);let n;for(;n=e.nextNode();)"TEMPLATE"===n.nodeName&&vt(n.content,s),Mt(s,e,n)||St(s,n)||kt(s,n)},_t=(t,s)=>{const e=G();e.append(t),vt(e,s)},xt="DOMContentLoaded",Lt=(t,s,e)=>{const n=()=>{e(!0)};t.addEventListener(xt,n);const o=(t=>{let s=t;do{s=(t=s).parentNode}while(s&&1===s.nodeType);return t})(s),c=l(o,{s:new Set}),r=()=>{e(!1)};return c.s.add(r),c.o||(c.o=new MutationObserver((()=>{for(const t of[...c.s])t()})),c.o.observe(o,{childList:!0,subtree:!0})),()=>{c.s.delete(r),t.removeEventListener(xt,n),c.s.size||(c.o.disconnect(),delete c.o)}};class Tt extends HTMLElement{constructor(){super()}attributeChangedCallback(t,s,e){const n=v(t),o=r(this);o&&this.i(o,n,e)}connectedCallback(){const t=this.constructor,s=new(n(t)),i=e(t),l=i.useShadow,f=l?this.shadowRoot||this.attachShadow({mode:"open"}):this;r(this,s),c.set(s,this),o(s,i),this.classList.add(i.className),this.l(i,s),s.onInit?.(),((t,s)=>{const e=t.ownerDocument,n=()=>{let s=t;do{if(s.nextSibling)return!0}while(s=s.parentNode);return!1};if("loading"!==e.readyState||n())s();else{const o=Lt(e,t,(t=>{(t||n())&&(o(),s())}))}})(this,(()=>{s.onParse?.();const t=K();t.innerHTML=i.template,vt(t.content,s),l||this.h(),i.style&&f.append(J(i.style)),f.append(t.content),s.onViewInit?.()}))}disconnectedCallback(){const t=r(this);t?.onDestroy?.(),$(this),c.delete(t),this.h()}l(t,s){for(const e of t.prop||[]){const t=(t,s)=>{const n=r(t);this.i(n,e,s)};u(this,e,t),t(this,this[e]);const n=(t,s)=>{const n=c.get(t);n&&(n[e]=s)};u(s,e,n),n(s,s[e])}for(const e of t.attr||[]){const n=_(e);this.i(s,e,T(this,n)),(t.prop||[]).includes(e)||u(s,e,((t,s)=>{const e=c.get(t);e&&j(e,n,s)}))}}i(t,s,e){const n=t[s];t[s]=e,t.onChange?.(s,n,e)}h(){this.innerHTML="",this.shadowRoot&&(this.shadowRoot.innerHTML="")}}let Ot=new Map,jt=()=>{var t;Ot=N[t="__fudgel"]||(N[t]=Ot),jt=()=>{}};const At=customElements,Pt=(t,s,o)=>{jt();const c=`fudgel-${(()=>{const t=Ot.get("n")||0;return Ot.set("n",t+1),t})()}`,r=Nt(s.style||"",t,c,s.useShadow),i={...s,className:c,style:r};class l extends Tt{}l.observedAttributes=(i.attr||[]).map(_),e(l,i),n(l,o||class{});const f=K();f.innerHTML=i.template,Ht(f,c),i.template=f.innerHTML,b("component",l,l,i),At.get(t)||At.define(t,l)},Ht=(t,s)=>{const e=R(t.content,1);let n;for(;n=e.nextNode();)"TEMPLATE"===n.nodeName&&Ht(n,s),n.classList.add(s)},Nt=(t,s,e,n)=>{const o=(t,s)=>{t[Dt]&&(t[Dt]=t[Dt].split(",").map((t=>c(t,s))).join(","),s="");for(const e of t.cssRules||[])o(e,s);return t.cssText},c=(t,s)=>{const o=t=>`${t}.${e}`,c=(t,s)=>t.replace(/:host/,s),r=c(t=t.trim(),"")===t;return n?(r||t.includes(" "))&&(t=o(t)):(t=c(t,s),r&&(t=`${s} ${o(t)}`)),t};return[...W(t)].map((t=>o(t,s))).join("")},Dt="selectorText",Ft=new Map,Gt=[];class Jt{constructor(){this.u=new Map,this.on=(t,s)=>this.p(t).push(s)&&(()=>this.off(t,s)),this.p=t=>this.u.get(t)||this.u.set(t,[]).get(t)}emit(t,...s){for(const e of[...this.p(t)])e(...s)}off(t,s){const e=this.p(t);for(let t=e.length-1;t>=0;t-=1)e[t]===s&&e.splice(t,1)}}class Kt extends HTMLElement{constructor(){super(),this.m=G(),this.$=[],this.C=[],this.k=[];let t=this.children,s=t[0];if("TEMPLATE"===s.nodeName)this.C=Array.from(s.content.children);else for(;t.length>0;){const s=t[0];this.C.push(s),this.m.append(s)}}connectedCallback(){this.M(N,"popstate",this.S),this.M(H.body,"click",this._),this.L(N.location.pathname),this.T(N.history,"pushState",this.O),this.T(N.history,"replaceState",this.O)}disconnectedCallback(){for(;this.k.length;)this.k.pop()()}go(t){N.history.pushState(null,"",t)}j(t){let s=!1;if(t.e!==this.$[0]){const e=T(t.e,"title"),n=T(t.e,"component");this.innerHTML="",e&&(H.title=e),this.$=[t.e,n?F(n):D(t.e)],s=!0}const e=this.$[1];for(const[s,n]of t.g)j(e,_(s),n);s&&this.append(e)}_(t){if(!t.defaultPrevented){const s=t.composedPath().filter((t=>"A"===t.tagName))[0];s&&s.href&&s.origin===N.location.origin&&(t.preventDefault(),this.go(`${s.pathname}${s.search}${s.hash}`))}}M(t,s,e){const n=e.bind(this);t.addEventListener(s,n),this.k.push((()=>t.removeEventListener(s,n)))}A(t){for(const s of this.C){const e=T(s,"path")||"**",n=T(s,"regexp");let o=e;L(n)||(o=e.replace(/\*+/g,(t=>t.length>1?".*":"[^/]*")).replace(/:[^:\/]+/g,(t=>`(?<${t.slice(1)}>[^/]+)`)));const c=new RegExp(`^${o}(/.*)?$`),r=t.match(c);if(r)return{e:s,g:Object.entries(r.groups||{})}}return null}O(t,s){return(e,n,o)=>{s.call(t,e,n,o),this.L(o||"/")}}T(t,s,e){const n=t[s];t[s]=e.call(this,t,n),this.k.push((()=>t[s]=n))}S(){this.L(N.location.pathname)}L(t){const s=this.A(t);s&&this.j(s),E(H.body,"routeChange",t)}}const Rt=(t,s)=>t.n[s]||(t.n[s]=G()),Wt=t=>t.parentElement||(t.getRootNode()||{}).host,qt=(t,...s)=>String.raw({raw:t},...s),zt=qt;t.Component=(t,s)=>e=>{Pt(t,s,e)},t.CustomElement=Tt,t.Emitter=Jt,t.addDirective=(t,s)=>Et["*"===t.charAt(0)?0:1][t]=s,t.component=Pt,t.css=zt,t.defineRouterComponent=(t="router-outlet")=>{customElements.define(t,Kt)},t.defineSlotComponent=(t="slot-like")=>{class s extends HTMLElement{constructor(){super();let t=Wt(this);for(;t&&!(this.P=i(t));)t=Wt(t)}attributeChangedCallback(t,s,e){const n=this.P;n&&s!==e&&(this.H(n,s),this.N(n))}connectedCallback(){const t=this.P;t&&(h(this,t.s),this.N(t))}disconnectedCallback(){this.P&&this.H(this.P,T(this,"name")||"")}N(t){const s=T(this,"name")||"";this.append(t.n[s]||[]),this.D=t.e.on(s,(()=>{this.H(t,s),this.N(t)}))}H(t,s){this.D(),Rt(t,s).append(...this.childNodes),t.e.emit(s)}}s.observedAttributes=["name"],customElements.define(t,s),y("component",((s,e,o)=>{if(!o.useShadow){let s=!1;const r=K();r.innerHTML=o.template;const l=R(r.content,1);let f;for(;f=l.nextNode();)if("SLOT"===f.nodeName){s=!0;const e=F(t);for(const t of f.attributes)j(e,t.name,t.value);l.previousNode(),e.append(...f.childNodes),f.replaceWith(e)}s&&(o.template=r.innerHTML),function(t){const s=t.onChildren;let e;t.onParse=function(){e=O(this),i(e,{e:new Jt,n:{"":G()},s:z(Wt(c.get(this)))});const t=i(e);for(const s of[...e.querySelectorAll("[slot]")])Rt(t,T(s,"slot")||"").append(s);for(const s of[...e.childNodes])t.n[""].append(s);s?.call(this)}}(n(e)?.prototype)}}))},t.di=t=>{if(Gt.includes(t))throw Gt.push(t),new Error(`Circular dependency: ${Gt.map((t=>`${t.name}`)).join(" -> ")}`);Gt.push(t);const s=Ft.get(t)||Ft.set(t,new t).get(t);return Gt.pop(),s},t.diOverride=(t,s)=>{Ft.set(t,s)},t.dispatchCustomEvent=E,t.emit=(t,s,e,n={})=>{const o=c.get(t);o&&E(o,s,e,n)},t.getAttribute=T,t.hookOnGlobal=y,t.html=qt,t.metadataControllerElement=c,t.parseText=yt,t.parseTextAllowBoolean=gt,t.rootElement=O,t.setAttribute=j,t.update=(t,s)=>{if(t)k(t,s);else for(const t of c.keys())k(t)},t.updateController=k},"object"==typeof exports&&"undefined"!=typeof module?s(exports):"function"==typeof define&&define.amd?define(["exports"],s):s((t="undefined"!=typeof globalThis?globalThis:t||self).Fudgel={});
+
+
+<script>
+var t,s;t=this,s=function(t){const s=()=>{const t=new WeakMap;return(s,e)=>t.get(s)||e&&t.set(s,e).get(s)},e=s(),n=s(),o=s(),c=new Map,r=s(),i=s(),l=s(),f=s(),h=s(),u=(t,s,e)=>{const n=f(t,{});let o=n[s];if(!o){let e=t[s];const c=Object.getOwnPropertyDescriptor(t,s)||{};o=[],n[s]=o,Object.defineProperty(t,s,{get:c.get||(()=>e),set:function(t){const s=e;if(t!==s){c.set?.(t),e=t;for(const e of o)e(this,t,s)}}})}o.push(e)},a={},d=s(),p=s(),w=s(),b=(t,s,...e)=>{m(a,t,s,...e),m(d(s)||{},t,...e)},m=(t,s,...e)=>{for(const n of t[s]||[])t[s].includes(n)&&n(...e)},$=t=>{const s=[t];let e;for(;e=s.shift();){for(const t of p(e,[]))t();for(const t of e.childNodes)s.push(t)}},g=(t,s,e,n)=>{const o=d(t,{});o[e]?o[e].push(n):o[e]=[n],p(s,[]).push((()=>{const s=d(t);s?.[e]&&(s[e]=s[e].filter((t=>t!==n)))}))},y=(t,s)=>((a[t]||(a[t]=[])).push(s),()=>{a[t]=a[t].filter((t=>t!==s))}),C=(t,s,e)=>{const n=w(s,{});n[e]||(n[e]=1,u(s,e,((s,n,o)=>{b(`set:${e}`,s,t,n,o)})))},E=(t,s,e,n={})=>{t.dispatchEvent(new CustomEvent(s,{bubbles:!0,cancelable:!1,composed:!0,detail:e,...n}))},k=(t,s)=>{if(t.onChange){const s=o(t);for(const e of[...s.prop||[],...s.attr||[]])t.onChange(e,t[e],t[e])}b(`set:${s||""}`,t,t)},M=t=>t.entries?t.entries():Object.entries(t),S=t=>{const s=new Map;return e=>{if(s.has(e))return s.get(e);const n=t(e);return s.set(e,n),n}},v=t=>t.replace(/-(\p{Ll})/gu,(t=>t[1].toUpperCase())),_=t=>t.replace(/\p{Lu}/gu,(t=>`-${t[0]}`.toLowerCase())),x=t=>`${t??""}`,L=t=>"string"==typeof t,T=(t,s)=>t.getAttribute(s),O=t=>{const s=c.get(t);return s?.shadowRoot??s??null},j=(t,s,e)=>{!0===e&&(e=""),L(e)?t.setAttribute(s,e):t.removeAttribute(s)},A=(t,s)=>[...new Set([...t,...s])],P=(t,s)=>"function"==typeof t[s]?t[s].bind(t):t[s],H=document,N=window,D=t=>t.cloneNode(!0),F=t=>H.createElement(t),G=()=>H.createDocumentFragment(),J=t=>{const s=F("style");return s.append((t=>H.createTextNode(t))(t)),s},K=()=>F("template"),R=(t,s)=>H.createTreeWalker(t,s),W=t=>{const s=H.implementation.createHTMLDocument(""),e=s.createElement("style");return e.textContent=t,s.body.append(e),e.sheet.cssRules||[]};function q(t,s,e,n,o){g(t,s,"set:",e);for(const c of n){const n=`set:${c}`;c in o?(C(t,o,c),g(o,s,n,e)):(C(t,t,c),u(t,c,((t,s,e)=>{t.onChange?.(c,s,e)})),g(t,s,n,e))}}const z=t=>{let s=h(t);if(t){let e=t.parentNode;for(;!s&&e;)s=h(e),e=e.parentNode}return s||(s={},h(H.body,s)),s},B=(t,s)=>{const e=Object.create(t);return h(s,e),e},I=(t,s)=>new Proxy(t,{get:(t,e)=>P(e in s?s:t,e)});let Q="",U=0,V=0;const X={b:"\b",f:"\f",n:"\n",r:"\r",t:"\t",v:"\v"},Y={"-":t=>s=>-t(s),"!":t=>s=>!t(s),"~":t=>s=>~t(s),"+":t=>s=>+t(s)},Z={"||":[1,(t,s)=>e=>t(e)||s(e)],"&&":[2,(t,s)=>e=>t(e)&&s(e)],"|":[3,(t,s)=>e=>t(e)|s(e)],"^":[4,(t,s)=>e=>t(e)^s(e)],"&":[5,(t,s)=>e=>t(e)&s(e)],"==":[6,(t,s)=>e=>t(e)==s(e)],"!=":[6,(t,s)=>e=>t(e)!=s(e)],"===":[6,(t,s)=>e=>t(e)===s(e)],"!==":[6,(t,s)=>e=>t(e)!==s(e)],"<":[7,(t,s)=>e=>t(e)<s(e)],">":[7,(t,s)=>e=>t(e)>s(e)],"<=":[7,(t,s)=>e=>t(e)<=s(e)],">=":[7,(t,s)=>e=>t(e)>=s(e)],"<<":[8,(t,s)=>e=>t(e)<<s(e)],">>":[8,(t,s)=>e=>t(e)>>s(e)],">>>":[8,(t,s)=>e=>t(e)>>>s(e)],"+":[9,(t,s)=>e=>t(e)+s(e)],"-":[9,(t,s)=>e=>t(e)-s(e)],"*":[10,(t,s)=>e=>t(e)*s(e)],"/":[10,(t,s)=>e=>t(e)/s(e)],"%":[10,(t,s)=>e=>t(e)%s(e)]},tt={true:()=>!0,false:()=>!1,null:()=>null},st=t=>{Q=t,U=0,et(0);let s=[()=>{},[]];try{s=lt()||rt()}catch(t){}return s},et=(t=1)=>{U+=t,V=Q.charCodeAt(U)},nt=()=>Q.charAt(U),ot=t=>t>=48&&t<=57,ct=t=>t>=65&&t<=90||t>=97&&t<=122||t>=128||36===t||95===t,rt=()=>{const t=`Parse error at index ${U}: ${Q}`;throw console.error(t),new Error(t)},it=()=>{for(;32===V||9===V||10===V||13===V;)et()},lt=()=>{const t=ht();return it(),t},ft=()=>{it();let t,s=Q.substr(U,3),e=3;for(;e>0;){if(t=Z[s],t){et(e);break}s=s.substr(0,--e)}return t},ht=()=>{let t,s,e,n,o,c,r;if(o=ut(),!o)return o;if(s=ft(),!s)return o;for(c=ut()||rt(),n=[o,s,c],r=()=>{let t=n.pop(),s=n.pop(),e=n.pop();n.push([s[1](e[0],t[0]),A(e[1],t[1])])};e=ft();){for(;n.length>2&&e[0]<=n[n.length-2][0];)r();t=ut()||rt(),n.push(e,t)}for(;n.length>1;)r();return n[0]},ut=()=>{let t;if(it(),ot(V)||46===V)return dt();if(39===V||34===V)t=pt();else{const s=Y[nt()];if(s){et();const t=ut()||rt();return[s(t[0]),t[1]]}ct(V)||rt();const e=wt();t=tt[e]?[tt[e],[]]:[t=>P(t,e),[e]]}return at(t)},at=t=>{for(it();46===V||91===V||40===V||63===V;){let s,e,n=[],o=t;if(63===V&&(et(),it(),46!==V&&rt(),s=!0),91===V){et();const t=lt()||rt();e=(s,e)=>P(s,t[0](e)),n=t[1],93!==V&&rt(),et()}else if(40===V){et();const t=bt();e=(s,e)=>s(...t.map((t=>t[0](e)))),n=t.reduce(((t,s)=>A(t,s[1])),n)}else if(46===V){et(),it();const t=wt();e=s=>P(s,t)}else rt();t=s?[t=>{const s=o[0](t);return void 0===s?void 0:e(s,t)},A(o[1],n)]:[t=>e(o[0](t),t),A(o[1],n)],it()}return t},dt=()=>{let t="";for(;ot(V);)t+=nt(),et();if(46===V)for(t+=".",et();ot(V);)t+=nt(),et();if(101===V||69===V){t+=nt(),et(),43!==V&&45!==V||(t+=nt(),et());let s=!0;for(;ot(V);)t+=nt(),et(),s=!1;s&&rt()}ct(V)?rt():46!==V&&"."!==t||rt();const s=parseFloat(t);return[()=>s,[]]},pt=()=>{let t="";const s=V;for(et();U<Q.length&&V!==s;){if(92===V){et();const s=nt();t+=X[s]||s}else t+=nt();et()}return U>=Q.length&&rt(),et(),[()=>t,[]]},wt=()=>{let t=U;for(ct(V)?et():rt();U<Q.length&&(ct(V)||ot(V));)et();return Q.slice(t,U)},bt=()=>{const t=[];for(it();41!==V;)U>=Q.length&&rt(),t.push(lt()||rt()),it(),44===V?(et(),it()):41!==V&&rt();return et(),t},mt=t=>{const s=t.split(/{{(.*?)}}/);if(s.length<2)return null;const e=[];let n=!1,o=[];for(const t of s){if(n){const s=st(t);e.push(s[0]),o=A(o,s[1])}else e.push(t);n=!n}return[e,o]},$t=t=>t?[s=>t[0].map((t=>x(t?.call?t(s):t))).join(""),t[1]]:null,gt=S((t=>{const s=mt(t),e=s?.[0];return 3===e?.length&&""===e[0]&&""===e[2]?[t=>{const s=e[1](t);return"boolean"==typeof s?s:x(s)},s[1]]:$t(s)})),yt=S((t=>$t(mt(t)))),Ct={window:()=>{},document:()=>{},stop:t=>t.stopPropagation(),prevent:t=>t.preventDefault(),self:(t,s)=>t.target!==s,outside:(t,s)=>s.contains(t.target),ctrl:t=>!t.ctrlKey,shift:t=>!t.shiftKey,alt:t=>!t.altKey,meta:t=>!t.metaKey,left:t=>0!==t.button,middle:t=>1!==t.button,right:t=>2!==t.button,exact:(t,s,e)=>["ctrl","shift","alt","meta"].some((s=>t[`${s}Key`]&&!e.has(s)))},Et=[{"*for":(t,s,e,n)=>{let o="key",c="value";const r=n.match(/^\s*(?:(?:(\S+)\s*,\s*)?(\S+)\s+of\s+)?(\S+)\s*$/);r&&(o=r[1]||o,c=r[2]||c,n=r[3]);const i=st(n),l=z(s);let f=new Map;const h=t=>{const n=i[0](I(t,l))||[];let r=f;f=new Map;let h=s;for(const[s,i]of M(n)){let n=r.get(s);if(r.delete(s),n===h.nextSibling)z(n)[c]=i;else{n&&($(n),n.remove()),n=D(e);const r=B(l,n);r[o]=s,r[c]=i,_t(n,t),h.after(n)}h=n,f.set(s,h)}for(const t of r.values())$(t),t.remove()};q(t,s,h,i[1],l),h(t)},"*if":(t,s,e,n)=>{const o=st(n),c=z(s);let r=null;const i=t=>{o[0](I(t,c))?r||(r=D(e),B(c,r),_t(r,t),s.after(r)):r&&($(r),r.remove(),r=null)};q(t,s,i,o[1],c),i(t)},"*repeat":(t,s,e,n)=>{let o="index";const c=n.match(/^(\S+)\s+as\s+(\S+)$/);c&&(n=c[1],o=c[2]);const r=st(n),i=z(s);let l=[];const f=t=>{let n=+r[0](I(t,i));for(;l.length>n;){const t=l.pop();$(t),t.remove()}let c=l.length+1,f=l[c-1]||s;for(;l.length<n;){let s=D(e);B(i,s)[o]=c++,_t(s,t),l.push(s),f.after(s),f=s}};q(t,s,f,r[1],i),f(t)}},{"":(t,s,e,n)=>{const o=gt(e);if(o){const e=z(s),c=t=>{j(s,n,o[0](I(t,e)))};q(t,s,c,o[1],e),c(t)}},"@":(t,s,e,n)=>{const[o,...c]=v(n.slice(1)).split("."),r=Object.create(z(s)),i=st(e),l={},f=new Set(c);let h=s;for(const t of["passive","capture","once"])f.has(t)&&(l[t]=!0);f.has("window")&&(h=N),(f.has("document")||f.has("outside"))&&(h=H),h.addEventListener(o,(e=>{c.some((t=>(Ct[t]||(s=>{return e=s.key,_(e.replace(/^\p{Lu}/gu,(t=>t.toLowerCase())))!==(t.match(/^code-\d+$/)?String.fromCodePoint(+t.split("-")[1]):t);var e}))(e,s,f)))||(s=>{r.$event=s,i[0](I(t,r))})(e)}),l),j(s,n)},"#ref":(t,s,e,n)=>{t[v(e)]=s,j(s,n)},".":(t,s,e,n)=>{const o=st(e),c=v(n.slice(1)),r=z(s),i=t=>{const e=o[0](I(t,r));s[c]=e};q(t,s,i,o[1],r),i(t),j(s,n)}}];function kt(t,s){if(1===s.nodeType)for(const e of[...s.attributes]){const n=e.nodeName,o=n.charAt(0),c=Et[1],r=c[n]||c[o]||c[""];r?.(t,s,e.nodeValue||"",n)}}const Mt=(t,s,e)=>{const n=e.attributes;if(1===e.nodeType&&n){let r;for(const[t,s]of M(Et[0])){const e=n.getNamedItem(t);if(e){if(r)throw new Error(`${r[0]} breaks ${t}`);r=[t,s,e.nodeValue||""]}}if(r){const n=(o=`${r[0]}=${c=r[2],JSON.stringify(c)}`,H.createComment(o));return e.before(n),s.previousNode(),e.remove(),j(e,r[0]),r[1](t,n,e,r[2],r[0]),1}}var o,c};function St(t,s){if(3===s.nodeType){const e=yt(s.textContent||"");if(e){const n=z(s),o=t=>{s.nodeValue=e[0](I(t,n))};return q(t,s,o,e[1],n),o(t),1}}}const vt=(t,s)=>{const e=R(t,133);let n;for(;n=e.nextNode();)"TEMPLATE"===n.nodeName&&vt(n.content,s),Mt(s,e,n)||St(s,n)||kt(s,n)},_t=(t,s)=>{const e=G();e.append(t),vt(e,s)},xt="DOMContentLoaded",Lt=(t,s,e)=>{const n=()=>{e(!0)};t.addEventListener(xt,n);const o=(t=>{let s=t;do{s=(t=s).parentNode}while(s&&1===s.nodeType);return t})(s),c=l(o,{s:new Set}),r=()=>{e(!1)};return c.s.add(r),c.o||(c.o=new MutationObserver((()=>{for(const t of[...c.s])t()})),c.o.observe(o,{childList:!0,subtree:!0})),()=>{c.s.delete(r),t.removeEventListener(xt,n),c.s.size||(c.o.disconnect(),delete c.o)}};class Tt extends HTMLElement{constructor(){super()}attributeChangedCallback(t,s,e){const n=v(t),o=r(this);o&&this.i(o,n,e)}connectedCallback(){const t=this.constructor,s=new(n(t)),i=e(t),l=i.useShadow,f=l?this.shadowRoot||this.attachShadow({mode:"open"}):this;r(this,s),c.set(s,this),o(s,i),this.classList.add(i.className),this.l(i,s),s.onInit?.(),((t,s)=>{const e=t.ownerDocument,n=()=>{let s=t;do{if(s.nextSibling)return!0}while(s=s.parentNode);return!1};if("loading"!==e.readyState||n())s();else{const o=Lt(e,t,(t=>{(t||n())&&(o(),s())}))}})(this,(()=>{s.onParse?.();const t=K();t.innerHTML=i.template,vt(t.content,s),l||this.h(),i.style&&f.append(J(i.style)),f.append(t.content),s.onViewInit?.()}))}disconnectedCallback(){const t=r(this);t?.onDestroy?.(),$(this),c.delete(t),this.h()}l(t,s){for(const e of t.prop||[]){const t=(t,s)=>{const n=r(t);this.i(n,e,s)};u(this,e,t),t(this,this[e]);const n=(t,s)=>{const n=c.get(t);n&&(n[e]=s)};u(s,e,n),n(s,s[e])}for(const e of t.attr||[]){const n=_(e);this.i(s,e,T(this,n)),(t.prop||[]).includes(e)||u(s,e,((t,s)=>{const e=c.get(t);e&&j(e,n,s)}))}}i(t,s,e){const n=t[s];t[s]=e,t.onChange?.(s,n,e)}h(){this.innerHTML="",this.shadowRoot&&(this.shadowRoot.innerHTML="")}}let Ot=new Map,jt=()=>{var t;Ot=N[t="__fudgel"]||(N[t]=Ot),jt=()=>{}};const At=customElements,Pt=(t,s,o)=>{jt();const c=`fudgel-${(()=>{const t=Ot.get("n")||0;return Ot.set("n",t+1),t})()}`,r=Nt(s.style||"",t,c,s.useShadow),i={...s,className:c,style:r};class l extends Tt{}l.observedAttributes=(i.attr||[]).map(_),e(l,i),n(l,o||class{});const f=K();f.innerHTML=i.template,Ht(f,c),i.template=f.innerHTML,b("component",l,l,i),At.get(t)||At.define(t,l)},Ht=(t,s)=>{const e=R(t.content,1);let n;for(;n=e.nextNode();)"TEMPLATE"===n.nodeName&&Ht(n,s),n.classList.add(s)},Nt=(t,s,e,n)=>{const o=(t,s)=>{t[Dt]&&(t[Dt]=t[Dt].split(",").map((t=>c(t,s))).join(","),s="");for(const e of t.cssRules||[])o(e,s);return t.cssText},c=(t,s)=>{const o=t=>`${t}.${e}`,c=(t,s)=>t.replace(/:host/,s),r=c(t=t.trim(),"")===t;return n?(r||t.includes(" "))&&(t=o(t)):(t=c(t,s),r&&(t=`${s} ${o(t)}`)),t};return[...W(t)].map((t=>o(t,s))).join("")},Dt="selectorText",Ft=new Map,Gt=[];class Jt{constructor(){this.u=new Map,this.on=(t,s)=>this.p(t).push(s)&&(()=>this.off(t,s)),this.p=t=>this.u.get(t)||this.u.set(t,[]).get(t)}emit(t,...s){for(const e of[...this.p(t)])e(...s)}off(t,s){const e=this.p(t);for(let t=e.length-1;t>=0;t-=1)e[t]===s&&e.splice(t,1)}}class Kt extends HTMLElement{constructor(){super(),this.m=G(),this.$=[],this.C=[],this.k=[];let t=this.children,s=t[0];if("TEMPLATE"===s.nodeName)this.C=Array.from(s.content.children);else for(;t.length>0;){const s=t[0];this.C.push(s),this.m.append(s)}}connectedCallback(){this.M(N,"popstate",this.S),this.M(H.body,"click",this._),this.L(N.location.pathname),this.T(N.history,"pushState",this.O),this.T(N.history,"replaceState",this.O)}disconnectedCallback(){for(;this.k.length;)this.k.pop()()}go(t){N.history.pushState(null,"",t)}j(t){let s=!1;if(t.e!==this.$[0]){const e=T(t.e,"title"),n=T(t.e,"component");this.innerHTML="",e&&(H.title=e),this.$=[t.e,n?F(n):D(t.e)],s=!0}const e=this.$[1];for(const[s,n]of t.g)j(e,_(s),n);s&&this.append(e)}_(t){if(!t.defaultPrevented){const s=t.composedPath().filter((t=>"A"===t.tagName))[0];s&&s.href&&s.origin===N.location.origin&&(t.preventDefault(),this.go(`${s.pathname}${s.search}${s.hash}`))}}M(t,s,e){const n=e.bind(this);t.addEventListener(s,n),this.k.push((()=>t.removeEventListener(s,n)))}A(t){for(const s of this.C){const e=T(s,"path")||"**",n=T(s,"regexp");let o=e;L(n)||(o=e.replace(/\*+/g,(t=>t.length>1?".*":"[^/]*")).replace(/:[^:\/]+/g,(t=>`(?<${t.slice(1)}>[^/]+)`)));const c=new RegExp(`^${o}(/.*)?$`),r=t.match(c);if(r)return{e:s,g:Object.entries(r.groups||{})}}return null}O(t,s){return(e,n,o)=>{s.call(t,e,n,o),this.L(o||"/")}}T(t,s,e){const n=t[s];t[s]=e.call(this,t,n),this.k.push((()=>t[s]=n))}S(){this.L(N.location.pathname)}L(t){const s=this.A(t);s&&this.j(s),E(H.body,"routeChange",t)}}const Rt=(t,s)=>t.n[s]||(t.n[s]=G()),Wt=t=>t.parentElement||(t.getRootNode()||{}).host,qt=(t,...s)=>String.raw({raw:t},...s),zt=qt;t.Component=(t,s)=>e=>{Pt(t,s,e)},t.CustomElement=Tt,t.Emitter=Jt,t.addDirective=(t,s)=>Et["*"===t.charAt(0)?0:1][t]=s,t.component=Pt,t.css=zt,t.defineRouterComponent=(t="router-outlet")=>{customElements.define(t,Kt)},t.defineSlotComponent=(t="slot-like")=>{class s extends HTMLElement{constructor(){super();let t=Wt(this);for(;t&&!(this.P=i(t));)t=Wt(t)}attributeChangedCallback(t,s,e){const n=this.P;n&&s!==e&&(this.H(n,s),this.N(n))}connectedCallback(){const t=this.P;t&&(h(this,t.s),this.N(t))}disconnectedCallback(){this.P&&this.H(this.P,T(this,"name")||"")}N(t){const s=T(this,"name")||"";this.append(t.n[s]||[]),this.D=t.e.on(s,(()=>{this.H(t,s),this.N(t)}))}H(t,s){this.D(),Rt(t,s).append(...this.childNodes),t.e.emit(s)}}s.observedAttributes=["name"],customElements.define(t,s),y("component",((s,e,o)=>{if(!o.useShadow){let s=!1;const r=K();r.innerHTML=o.template;const l=R(r.content,1);let f;for(;f=l.nextNode();)if("SLOT"===f.nodeName){s=!0;const e=F(t);for(const t of f.attributes)j(e,t.name,t.value);l.previousNode(),e.append(...f.childNodes),f.replaceWith(e)}s&&(o.template=r.innerHTML),function(t){const s=t.onChildren;let e;t.onParse=function(){e=O(this),i(e,{e:new Jt,n:{"":G()},s:z(Wt(c.get(this)))});const t=i(e);for(const s of[...e.querySelectorAll("[slot]")])Rt(t,T(s,"slot")||"").append(s);for(const s of[...e.childNodes])t.n[""].append(s);s?.call(this)}}(n(e)?.prototype)}}))},t.di=t=>{if(Gt.includes(t))throw Gt.push(t),new Error(`Circular dependency: ${Gt.map((t=>`${t.name}`)).join(" -> ")}`);Gt.push(t);const s=Ft.get(t)||Ft.set(t,new t).get(t);return Gt.pop(),s},t.diOverride=(t,s)=>{Ft.set(t,s)},t.dispatchCustomEvent=E,t.emit=(t,s,e,n={})=>{const o=c.get(t);o&&E(o,s,e,n)},t.getAttribute=T,t.hookOnGlobal=y,t.html=qt,t.metadataControllerElement=c,t.parseText=yt,t.parseTextAllowBoolean=gt,t.rootElement=O,t.setAttribute=j,t.update=(t,s)=>{if(t)k(t,s);else for(const t of c.keys())k(t)},t.updateController=k},"object"==typeof exports&&"undefined"!=typeof module?s(exports):"function"==typeof define&&define.amd?define(["exports"],s):s((t="undefined"!=typeof globalThis?globalThis:t||self).Fudgel={});
 Fudgel.component('range-finder', {
     attr: ['query', 'decimals', 'unit'],
     template: `@media
-        <span *if="invalid">({{query}}: invalid)</span>
+        <span *if="invalid">({{query}}) /* {{invalid}} */</span>
         <span *if="!invalid">
-            <span *if="min !== max">
-                ({{query}}: {{min}}{{unit}}) and ({{query}}: {{max}}{{unit}}) /* Supports a range */
+            <span *if="!exact && min === max">
+                (min-{{query}}: {{min}}{{unit}}) and (max-{{query}}: {{max}}{{unit}}) /* Actual value is within this range */
             </span>
-            <span *if="min === max">
+            <span *if="!exact && min !== max">
+                ({{query}}: {{min}}{{unit}}) and ({{query}}: {{max}}{{unit}}) /* Exact queries match a range */
+            </span>
+            <span *if="exact">
                 ({{query}}: {{min}}{{unit}})
             </span>
         </span>`
@@ -360,7 +501,7 @@ Fudgel.component('range-finder', {
         this.invalid = false;
 
         if (!this.match('min-', 0)) {
-            this.invalid = true;
+            this.invalid = `min-${this.query}: 0 failed to match`;
             return;
         }
 
@@ -388,8 +529,7 @@ Fudgel.component('range-finder', {
         }
 
         if (max >= Number.MAX_SAFE_INTEGER) {
-            this.invalid = true;
-            console.error(`${this.query} ran out of bounds with unit ${this.unit}`);
+            this.invalid = `max-${this.query} appears infinite`;
             return;
         }
 
@@ -405,6 +545,7 @@ Fudgel.component('range-finder', {
             step /= 10;
         }
 
+        // We now have a border where going smaller does not match.
         this.min = this.toFixed(max);
 
         // Scan larger to find the maximum
@@ -418,7 +559,8 @@ Fudgel.component('range-finder', {
             step /= 10;
         }
 
-        this.max = this.toFixed(max)
+        this.max = this.toFixed(max);
+        this.exact = this.min === this.max && this.match('', max);;
 
         // Finally, set up listeners.
         const notify = () => this.recalculate();
@@ -439,9 +581,10 @@ Fudgel.component('range-finder', {
     matchQuery(type, value) {
         return `(${type}${this.query}: ${this.toFixed(value)}${this.unit})`;
     }
-    
+
     toFixed(value) {
-        return value.toFixed(this.decimals).replace(/.?0+$/, '');
+        return value.toFixed(this.decimals).replace(/\.?0+$/, '');
     }
 });
+
 </script></body></html>

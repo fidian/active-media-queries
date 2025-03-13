@@ -1,243 +1,256 @@
 [
     {
         "name": "Media Type",
-        "scanner": "MEDIA_TYPE",
+        "mediaType": true,
         "values": ["print", "screen"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types",
         "description": "The output device type."
     },
     {
         "name": "any-hover",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["hover", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover",
         "description": "Can the user hover over elements?"
     },
     {
         "name": "any-pointer",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["coarse", "fine", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-pointer",
         "description": "Is there a pointing device? How accurate is it?"
     },
     {
         "name": "aspect-ratio",
-        "scanner": "RANGE",
+        "range": true,
         "units": ["/1"],
+        "decimals": 5,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio",
         "description": "The width-to-height aspect ratio of the viewport."
     },
     {
         "name": "color",
-        "scanner": "INTEGER",
+        "range": true,
+        "units": [""],
+        "decimals": 0,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color",
         "description": "Number of bits of color."
     },
     {
         "name": "color-gamut",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["p3", "rec2020", "srgb"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-gamut",
         "description": "Color range supported for output."
     },
     {
         "name": "color-index",
-        "scanner": "INTEGER",
+        "range": true,
+        "units": [""],
+        "decimals": 0,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-index",
         "description": "Number of indexed colors for display."
     },
     {
         "name": "device-aspect-ratio",
-        "scanner": "RANGE",
+        "range": true,
         "units": ["/1"],
+        "decimals": 5,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-aspect-ratio",
         "description": "DEPRECATED - Width-to-height aspect ratio of output."
     },
     {
         "name": "device-height",
-        "scanner": "RANGE",
+        "range": true,
         "units": ["em", "px"],
+        "decimals": 5,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-height",
         "description": "DEPRECATED - Output device height."
     },
     {
         "name": "device-posture",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["continuous", "folded"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-posture",
         "description": "If viewport is flat or folded."
     },
     {
         "name": "device-width",
-        "scanner": "RANGE",
+        "range": true,
         "units": ["em", "px"],
+        "decimals": 5,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width",
         "description": "DEPRECATED - Output device width."
     },
     {
         "name": "display-mode",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["browser", "fullscreen", "minimal-ui", "standalone", "window-controls-overlay"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/display-mode",
         "description": "How the application is being displayed."
     },
     {
         "name": "dynamic-range",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["high", "standard"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/dynamic-range",
         "description": "The combination of brightness, contrast ratio, and color depth."
     },
     {
         "name": "forced-colors",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["active", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors",
         "description": "Does the user agent restrict colors?"
     },
     {
         "name": "grid",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["0", "1"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/grid",
         "description": "Does the device use a grid or a bitmap screen? 0 is bitmap, 1 is grid."
     },
     {
         "name": "height",
-        "scanner": "RANGE",
+        "range": true,
         "units": ["em", "px"],
+        "decimals": 5,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/height",
         "description": " The output device height."
     },
     {
         "name": "hover",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["hover", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover",
         "description": "Can the user hover over elements?"
     },
     {
         "name": "inverted-colors",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["inverted", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors",
         "description": "Is the user agent or OS inverting colors?"
     },
     {
         "name": "monochrome",
-        "scanner": "INTEGER",
+        "range": true,
+        "units": [""],
+        "decimals": 0,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/monochrome",
         "description": "Bits per pixel in the device's monochrome frame buffer."
     },
     {
         "name": "orientation",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["landscape", "portrait"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation",
         "description": "Viewport orientation."
     },
     {
         "name": "overflow-block",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["none", "optional-paged", "scroll", "visible"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-block",
         "description": "How does the device handle overflows along the block axis?"
     },
     {
         "name": "overflow-inline",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["none", "scroll"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-inline",
         "description": "Can content overflowing the inline axis be scrolled?"
     },
     {
         "name": "pointer",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["coarse", "fine", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer",
         "description": "Is the input a pointing device? How accurate is it?"
     },
     {
         "name": "prefers-color-scheme",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["dark", "light"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme",
         "description": "Does the user prefer a light or dark color scheme?"
     },
     {
         "name": "prefers-contrast",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["custom", "less", "no-preference", "more"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast",
         "description": "Did the user change the amount of contrast between adjacent colors?"
     },
     {
         "name": "prefers-reduced-data",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["no-preference", "reduce"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data",
         "description": "Has the user requested web content that consumes less bandwidth?"
     },
     {
         "name": "prefers-reduced-motion",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["no-preference", "reduce"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion",
         "description": "Does the user prefer less motion?"
     },
     {
         "name": "prefers-reduced-transparency",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["no-preference", "reduce"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency",
         "description": "Does the user want less transparency or translucent layer effects?"
     },
     {
         "name": "resolution",
-        "scanner": "RANGE",
+        "range": true,
         "units": ["dpi", "dpcm", "dppx"],
+        "decimals": 5,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution",
         "description": "Output pixel density."
     },
     {
         "name": "scan",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["interlace", "progressive"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/scan",
         "description": "Is the display progressive or interlaced?"
     },
     {
         "name": "scripting",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["enabled", "initial-only", "none"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/scripting",
         "description": "Is JavaScript enabled?"
     },
     {
         "name": "shape",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["rect", "round"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/shape",
         "description": "Distinguish regular and round displays."
     },
     {
         "name": "update",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["none", "slow", "fast"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/update",
         "description": "How frequently can the device modify the appearance of content."
     },
     {
         "name": "video-dynamic-range",
-        "scanner": "ENUM",
+        "enum": true,
         "values": ["high", "standard"],
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/video-dynamic-range",
         "description": "Combination of brightness, contrast ratio, and color depth supported by video."
     },
     {
         "name": "width",
-        "scanner": "RANGE",
+        "range": true,
         "units": ["em", "px"],
+        "decimals": 5,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width",
         "description": "Width of the viewport, including scrollbar."
     }

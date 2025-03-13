@@ -1,0 +1,10 @@
+<div class="media media-{{name}}-unsupported">@media ({{name}}) {{> unsupported}}</div>
+{{#values}}
+<div class="media hide media-{{../name}}-{{.}}">@media ({{../name}}: {{.}})</div>
+{{/values}}
+{{> description}}
+<style>
+{{#values}}
+@media ({{../name}}: {{.}}) { .media-{{../name}}-unsupported { display: none; } .media-{{../name}}-{{.}} { display: initial; } }
+{{/values}}
+</style>

@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+import * as Handlebars from 'handlebars';
+import { readFile, writeFile } from 'fs/promises';
+
+async function render(templateFile, data, partials, output) {
+    const template = await readFile(templateFile, 'utf-8');
+    const compiled = Handlebars.default.compile(template);
+    const content = compiled(data);
+    await writeFile(output, content);
+}
+
+async function loadJson(file) {
+    const json = await readFile(file, 'utf-8');
+    return JSON.parse(json);
+}
+
+const partials = [ 'description', 'query', 'query-enum', 'query-media-type', 'query-range', 'unsupported' ];
+
+for (const partial of partials) {
+    const content = await readFile(`${partial}.hbs`, 'utf-8');
+    Handlebars.default.registerPartial(partial, content);
+}
+
+const data = {
+    fudgel: await readFile('node_modules/fudgel/dist/fudgel.umd.min.js', 'utf-8'),
+    queries: await loadJson('queries.json'),
+    rangeFinder: await readFile('range-finder.js', 'utf-8'),
+};
+render('README.hbs', data, partials, 'README.md');
+render('index.hbs', data, partials, 'index.html');
