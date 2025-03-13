@@ -1,0 +1,221 @@
+#!/usr/bin/env node
+
+const path = require("path");
+const fs = require("fs");
+const queries = require("../queries.json");
+let content = `<html>
+<head>
+<title>Active Media Queries</title>
+<style>
+.hide { display: none; }
+.unsupported { text-transform: uppercase; color: red; font-weight: normal; }
+.media { font-weight: bold; }
+.description { margin-left: 1em; }
+</style>
+</head>
+<body>
+<h1>Active Media Queries</h1>
+<p>You can test these yourself in your browser's developer tools. Try using 'window.matchMedia("min-width: 10px").matches' in the console.</p>
+`;
+
+for (const query of queries) {
+    switch (query.scanner) {
+        case "ENUM":
+            content += enumQuery(query);
+            break;
+        case "INTEGER":
+            content += rangeQuery(query, 0);
+            break;
+        case "MEDIA_TYPE":
+            content += mediaTypeQuery(query);
+            break;
+        case "RANGE":
+            content += rangeQuery(query, 5);
+            break;
+    }
+}
+
+content += "<script>";
+content += fs.readFileSync(path.resolve(__dirname, '../node_modules/fudgel/dist/fudgel.umd.min.js'), 'utf8');
+content += `
+Fudgel.component('range-finder', {
+    attr: ['query', 'decimals', 'unit'],
+    template: \`@media
+        <span *if="invalid">({{query}}: invalid)</span>
+        <span *if="!invalid">
+            <span *if="min !== max">
+                ({{query}}: {{min}}{{unit}}) and ({{query}}: {{max}}{{unit}}) /* Supports a range */
+            </span>
+            <span *if="min === max">
+                ({{query}}: {{min}}{{unit}})
+            </span>
+        </span>\`
+}, class {
+    constructor() {
+        this.min = 0;
+        this.max = 0;
+        this.removeListeners = [];
+    }
+
+    onChange(propName) {
+        if (propName !== 'query' && propName !== 'decimals' && propName !== 'unit') {
+            return;
+        }
+
+        if (!this.query || this.decimals === undefined || this.unit === undefined) {
+            return;
+        }
+
+        this.invalid = false;
+
+        if (!this.match('min-', 0)) {
+            this.invalid = true;
+            return;
+        }
+
+        this.recalculate();
+    }
+
+    recalculate() {
+        // Remove old listeners
+        for (const removeListener of this.removeListeners) {
+            removeListener();
+        }
+
+        // Scan and find the edge for maximum using a base-10 search.
+        let min = 0;
+        let max = 1;
+        const decimals = +this.decimals;
+        const minSize = Math.pow(10, -decimals);
+
+        // Grow while it does not match
+        while (
+            !this.match('max-', max) &&
+            max < Number.MAX_SAFE_INTEGER
+        ) {
+            max *= 10;
+        }
+
+        if (max >= Number.MAX_SAFE_INTEGER) {
+            this.invalid = true;
+            console.error(\`\${this.query} ran out of bounds with unit \${this.unit\}\`);
+            return;
+        }
+
+        // Shrink
+        let step = Math.pow(10, Math.floor(Math.log10(max)));
+        const initialStep = step;
+
+        while (step >= minSize) {
+            while (this.match('max-', max - step)) {
+                max -= step;
+            }
+
+            step /= 10;
+        }
+
+        this.min = max.toFixed(this.decimals);
+
+        // Scan larger to find the maximum
+        step = initialStep;
+
+        while (step >= minSize) {
+            while (this.match('min-', max + step)) {
+                max += step;
+            }
+
+            step /= 10;
+        }
+
+        this.max = max.toFixed(this.decimals);
+
+        // Finally, set up listeners.
+        const notify = () => this.recalculate();
+        const withinQueryList = window.matchMedia(this.matchQuery('', max))
+        withinQueryList.addEventListener('change', notify);
+        const beyondQueryList = window.matchMedia(this.matchQuery('', max + minSize))
+        beyondQueryList.addEventListener('change', notify);
+        this.removeListeners.push(() => withinQueryList.removeEventListener('change', notify));
+        this.removeListeners.push(() => beyondQueryList.removeEventListener('change', notify));
+    }
+
+    match(type, value) {
+        const query = this.matchQuery(type, value);
+        // console.log(query, window.matchMedia(query).matches);
+        return window.matchMedia(query).matches;
+    }
+
+    matchQuery(type, value) {
+        return \`(\${type}\${this.query}: \${value.toFixed(this.decimals)}\${this.unit})\`;
+    }
+});
+</script></body></html>`;
+
+console.log(content);
+
+function describe(query) {
+    return `<p class="description">${query.description} <a href="${query.url}">MDN</a></p>`;
+}
+
+function enumQuery(query) {
+    const divs = query.values
+        .map(
+            (value) =>
+                `<div class="media hide media-${query.name}-${value}">@media (${query.name}: ${value})</div>`
+        )
+        .join("\n");
+    const styles = query.values
+        .map(
+            (value) =>
+                `@media (${query.name}: ${value}) { .media-${query.name}-unsupported { display: none; } .media-${query.name}-${value} { display: initial; } }`
+        )
+        .join("\n");
+
+    return `
+<div class="media media-${query.name}-unsupported">@media (${query.name}) ${unsupported()}</div>
+${divs}
+${describe(query)}
+<style>
+${styles}
+</style>
+`;
+}
+
+function mediaTypeQuery(query) {
+    const divs = query.values
+        .map(
+            (value) =>
+                `<div class="media hide media-type-${value}">@media ${value}</div>`
+        )
+        .join("\n");
+    const styles = query.values
+        .map(
+            (value) =>
+                `@media ${value} { .media-type-unsupported { display: none; } .media-type-${value} { display: initial; } }`
+        )
+        .join("\n");
+
+    return `
+<div class="media media-type-unsupported">@media ${query.values.join(" or ")} ${unsupported()}</div>
+${divs}
+${describe(query)}
+<style>
+${styles}
+</style>
+`;
+}
+
+function rangeQuery(query, decimals) {
+    const rangeFinders = (query.units || ['']).map(unit => `<div class="media"><range-finder query="${query.name}" decimals="${decimals}" unit="${unit}">
+@media (${query.name}) <i>JavaScript Required</i>
+</range-finder></div>`).join('\n');
+
+    return `
+${rangeFinders}
+${describe(query)}
+`;
+}
+
+function unsupported() {
+    return `<span class="unsupported">/* unsupported */</span>`;
+}
