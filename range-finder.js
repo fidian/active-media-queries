@@ -15,6 +15,7 @@ Fudgel.component('range-finder', {
         </span>`
 }, class {
     constructor() {
+        this.decimalsNum = 0;
         this.min = 0;
         this.max = 0;
         this.removeListeners = [];
@@ -29,6 +30,7 @@ Fudgel.component('range-finder', {
             return;
         }
 
+        this.decimalsNum = +this.decimals;
         this.invalid = false;
 
         if (!this.match('min-', 0)) {
@@ -48,8 +50,7 @@ Fudgel.component('range-finder', {
         // Scan and find the edge for maximum using a base-10 search.
         let min = 0;
         let max = 1;
-        const decimals = +this.decimals;
-        const minSize = Math.pow(10, -decimals);
+        const minSize = Math.pow(10, -this.decimalsNum);
 
         // Grow while it does not match
         while (
@@ -105,7 +106,7 @@ Fudgel.component('range-finder', {
 
     match(type, value) {
         const query = this.matchQuery(type, value);
-        // console.log(query, window.matchMedia(query).matches);
+        //console.log(query, window.matchMedia(query).matches);
         return window.matchMedia(query).matches;
     }
 
@@ -114,6 +115,10 @@ Fudgel.component('range-finder', {
     }
 
     toFixed(value) {
-        return value.toFixed(this.decimals).replace(/\.?0+$/, '');
+        if (this.decimalsNum) {
+            return value.toFixed(this.decimalsNum).replace(/\.?0+$/, '');
+        }
+
+        return `${value}`;
     }
 });
