@@ -68,7 +68,7 @@
         "units": [""],
         "decimals": 0,
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color",
-        "description": "Number of bits of color.",
+        "description": "Number of bits of color per color component.",
         "valueDescriptions": [
             {
                 "value": "0",
